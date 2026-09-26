@@ -11,7 +11,7 @@
 * Documentación
 
 ## Sketch
-- [ ] Versión Desktop y Mobile
+- [x] Versión Desktop y Mobile
 - [ ] Guardado en formato PNG, JPG ó PDF
 - [ ] Dentro de una carpeta llamada "Sketch"
 - [ ] Tener en cuenta los mensajes de error para el usuario
