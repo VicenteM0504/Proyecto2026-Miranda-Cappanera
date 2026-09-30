@@ -57,10 +57,10 @@
 - [x] Emplear al menos 3 etiquetas semánticas diferentes
 - [x] Emplear ```<header></header>```. En el contenido de la cabecera debe haber un título ```<h1></h1>```, puede tener color de fondo, algún logotipo, etc.
 - [ ] La estructura de la página debe estar definida con ```<div></div>```
-- [ ] Debe contener al menos 3 elementos de tipo ```<input>``` o ```<select>``` o ```<button>``` que le permitan al usuario ingresar valores para poder realizar un cálculo de un ejercicio o seleccionar opciones o llamar a una función.
-- [ ] Emplear el atributo **placeholder** (mínimamente en 1 input)
+- [x] Debe contener al menos 3 elementos de tipo ```<input>``` o ```<select>``` o ```<button>``` que le permitan al usuario ingresar valores para poder realizar un cálculo de un ejercicio o seleccionar opciones o llamar a una función.
+- [x] Emplear el atributo **placeholder** (mínimamente en 1 input)
 - [ ] Emplear el atributo **size** para que el tamaño de los inputs sea prolijo
-- [ ] Emplear el atributo **maxlength** para que el usurario no pueda ingresar valores "muy grandes"
+- [x] Emplear el atributo **maxlength** para que el usurario no pueda ingresar valores "muy grandes"
 - [ ] No espaciar con excesivos ```<br>```. Utilizar márgenes, paddings, etc.
 - [ ] La anidación de etiquetas HTML debe ser correcta.
 - [ ] No utilizar etiquetas deprecadas.
