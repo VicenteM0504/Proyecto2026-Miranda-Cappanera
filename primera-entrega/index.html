@@ -6,6 +6,10 @@
     <meta name="author" content="Vicente Miranda-Juan Cappanera">
     <meta name="description" content="Pagina orientada a las olas y el surf">
     <meta name="keywords" content="surf, olas, pais, mar,  ">
+
+    <link href="style.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="misFunciones.js"></script>
+
     <title>WavesSpot</title>
 </head>
 
@@ -18,20 +22,67 @@
         <h5>Global Surf Information</h5>
 
         <p>
-        <input type="text"  id="Busqueda" name="busqueda" placeholder="Buscar por nombre, ciudad, pais...">
+            <input type="text" id="Busqueda" name="busqueda" placeholder="Buscar por nombre, ciudad, pais..." maxlength="30" size="100">
         </p>
 
-        <p> 
+        <p>
             <label for="Pais"> Pais: </label>
-            <select name="pais">
-                <option value="pais">Free</option>
-                <option value="pais2">Standard</option>
-                <option value="pais3">Premium</option>
+            <select name="Pais">
+                <option value="brasil">Brasil</option>
+                <option value="USA">USA</option>
+                <option value="mexico">Mexico</option>
+                <option value="mexico">Mexico</option>
+                <option value="costa rica">Costa Rica</option>
+                <option value="el salvador">El salvador</option>
+                <option value="peru">Peru</option>
+                <option value="chile">Chile</option>
+                <option value="portugal">Portugal</option>
+                <option value="francia">Francia</option>
+                <option value="españa">España</option>
+                <option value="irlanda">Irlanda</option>
+                <option value="reino unido">Reino Unido</option>
+                <option value="sudafrica">Sudafrica</option>
+                <option value="namibia">Namibia</option>
+                <option value="marruecos">Marruecos</option>
+                <option value="indonesia">Indonesia</option>
+                <option value="fiji">Fiji</option>
+                <option value="australia">Australia</option>
+                <option value="nueva zelanda">Nueva zelanda</option>
+                <option value="sri lanka">Sri Lanka</option>
+                <option value="filipinas">Filipinas</option>
+            </select>
+        </p>
+        <p>
+            <label for="Nivel"> Nivel: </label>
+            <select name="Nivel">
+                <option value="principiante">Principiante</option>
+                <option value="intermedio">Intermedio</option>
+                <option value="avanzado">Avanzado</option>
+                <option value="experto">Experto</option>
+                <option value="profesional">Profesional</option>
             </select>
         </p>
 
+        <p>
+            <label for="Oceano"> Oceano/mar: </label>
+            <select name="Oceano">
+                <option value="pacifico">Pacifico</option>
+                <option value="atlantico">Atlantico</option>
+                <option value="antartico">Antartico</option>
+                <option value="mar-cantabrico">Mar cantabrico</option>
+                <option value="mar-del-norte">Mar del norte</option>
+            </select>
+        </p>
 
-
+        <p>
+            <label for="Ola"> Tipo de ola: </label>
+            <select name="Ola">
+                <option value="reef-break">Reef break</option>
+                <option value="beach-break">Beach break</option>
+                <option value="point-break">Point break</option>
+                <option value="river-mouth">River mouth</option>
+            </select>
+        </p>
     </header>
 
     <nav>
@@ -40,15 +91,16 @@
 
 
     <main>
-
-
+        
     </main>
 
     <footer>
-<div>
-    
 
-</div>
+        <h4>Spots de Surf</h4>
+
+        <div>
+            
+        </div>
     </footer>
 
 
