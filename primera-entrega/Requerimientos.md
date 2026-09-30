@@ -18,11 +18,11 @@
 - [x] Debe ser realizado con el template
 
 ## Wireframe/Mockup
-- [ ] Dibujado con algún programa como: Figma, AdobeXD, Canvas, Draw.io en Drive, Pencil Project, Mockups, NinjaMock, o similares.
-- [ ] Diseño de Mensajes de error para el usuario
-- [ ] Versión Desktop y Mobile
-- [ ] Guardado en formato PNG, JPG ó PDF
-- [ ] Dentro de una carpeta llamada "Wireframe" ó "Mockup"
+- [x] Dibujado con algún programa como: Figma, AdobeXD, Canvas, Draw.io en Drive, Pencil Project, Mockups, NinjaMock, o similares.
+- [x] Diseño de Mensajes de error para el usuario
+- [x] Versión Desktop y Mobile
+- [x] Guardado en formato PNG, JPG ó PDF
+- [x] Dentro de una carpeta llamada "Wireframe" ó "Mockup"
 
 
 ## Repositorio
