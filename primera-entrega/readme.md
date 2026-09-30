@@ -36,6 +36,10 @@ Abajo del mapa, tenemos el apartado de los spots disponibles en relacion de depe
 |figma.com|mockup|
 
 ---
+## Mockup
+**link:** https://www.figma.com/make/DMlnms4VNc9wmStelxs8C4/Dise%25C3%25B1o-alta-fidelidad-surf-app?p=f&t=lU8ZtO9uTGVjiRFq-0
+
+---
 
 ## Autores
 Vicente Miranda
