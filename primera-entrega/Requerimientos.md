@@ -37,8 +37,8 @@
 - [ ] El historial debe ser consistente y tener al menos 10 commits separados en al menos 4 días
 
 ## Proyecto general
-- [ ] NO está permitido descargar un TEMPLATE (diseño 100% desde cero)
-- [ ] La página principal debe llamarse index
+- [x] NO está permitido descargar un TEMPLATE (diseño 100% desde cero)
+- [x] La página principal debe llamarse index
 - [ ] La estructura del proyecto debe ser adecuada (crear una carpeta para las imágenes, otra para los sketch/mockups).
 - [ ] Identar correctamente el código
 - [ ] No debe haber errores presentes (en Webstorm *Code* > *Inspect Code* para verificar que no haya errores)
@@ -52,10 +52,10 @@
 ## Sobre el HTML
 - [ ] Todas las etiquetas deben estar en minúscula
 - [ ] Poner comillas a todos los atributos
-- [ ] **Title** debe contener el título de la página
-- [ ] En el ```<head></head>``` incluir las etiquetas ```<meta>``` detallando: autor, descripción y palabras clave
-- [ ] Emplear al menos 3 etiquetas semánticas diferentes
-- [ ] Emplear ```<header></header>```. En el contenido de la cabecera debe haber un título ```<h1></h1>```, puede tener color de fondo, algún logotipo, etc.
+- [x] **Title** debe contener el título de la página
+- [x] En el ```<head></head>``` incluir las etiquetas ```<meta>``` detallando: autor, descripción y palabras clave
+- [x] Emplear al menos 3 etiquetas semánticas diferentes
+- [x] Emplear ```<header></header>```. En el contenido de la cabecera debe haber un título ```<h1></h1>```, puede tener color de fondo, algún logotipo, etc.
 - [ ] La estructura de la página debe estar definida con ```<div></div>```
 - [ ] Debe contener al menos 3 elementos de tipo ```<input>``` o ```<select>``` o ```<button>``` que le permitan al usuario ingresar valores para poder realizar un cálculo de un ejercicio o seleccionar opciones o llamar a una función.
 - [ ] Emplear el atributo **placeholder** (mínimamente en 1 input)
