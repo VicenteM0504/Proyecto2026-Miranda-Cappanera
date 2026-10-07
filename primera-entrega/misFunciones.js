@@ -3,21 +3,21 @@ const spots = {
         nombre: "Saquarema",
         pais: "Brasil",
         oceano: "Océano Atlántico",
-        nivel: "Intermedio - Avanzado",
+        nivel: "Intermedio",
         break: "Beach / Point Break"
     },
     pipeline: {
         nombre: "Pipeline",
         pais: "USA",
         oceano: "Océano Pacífico",
-        nivel: "Experto / Pro",
+        nivel: "Pro",
         break: "Reef Break"
     },
     puertoEscondido: {
         nombre: "Puerto Escondido",
         pais: "México",
         oceano: "Océano Pacífico",
-        nivel: "Avanzado - Experto",
+        nivel: "Avanzado",
         break: "Beach Break"
     },
     pavones: {
@@ -25,63 +25,63 @@ const spots = {
         pais: "Costa Rica",
         oceano: "Océano Pacífico",
         nivel: "Intermedio",
-        break: "Point Break (Izquierda)"
+        break: "Point Break"
     },
     puntaRoca: {
         nombre: "Punta Roca",
         pais: "El Salvador",
         oceano: "Océano Pacífico",
-        nivel: "Avanzado - Experto",
-        break: "Point Break (Derecha)"
+        nivel: "Avanzado",
+        break: "Point Break"
     },
     chicama: {
         nombre: "Chicama",
         pais: "Perú",
         oceano: "Océano Pacífico",
-        nivel: "Principiante - Intermedio",
-        break: "Point Break (Izquierda)"
+        nivel: "Principiante",
+        break: "Point Break"
     },
     puntaDeLobos: {
         nombre: "Punta de Lobos",
         pais: "Chile",
         oceano: "Océano Pacífico",
-        nivel: "Intermedio - Experto",
-        break: "Point Break (Izquierda)"
+        nivel: "Experto",
+        break: "Point Break"
     },
     nazare: {
         nombre: "Nazaré",
         pais: "Portugal",
         oceano: "Océano Atlántico",
-        nivel: "Experto / Ola Grande",
-        break: "Beach Break (Cañón)"
+        nivel: "Experto",
+        break: "Beach Break"
     },
     hossegor: {
         nombre: "Hossegor",
         pais: "Francia",
         oceano: "Océano Atlántico",
-        nivel: "Avanzado - Experto",
+        nivel: "Avanzado",
         break: "Beach Break"
     },
     mundaka: {
         nombre: "Mundaka",
         pais: "España",
-        oceano: "Mar Cantábrico (Atlántico)",
-        nivel: "Avanzado - Experto",
+        oceano: "Mar Cantábrico",
+        nivel: "Experto",
         break: "River Mouth Break"
     },
     bundoran: {
         nombre: "Bundoran",
         pais: "Irlanda",
         oceano: "Océano Atlántico",
-        nivel: "Intermedio - Experto",
+        nivel: "Experto",
         break: "Reef / Beach Break"
     },
     thursoEast: {
         nombre: "Thurso East",
         pais: "Reino Unido",
         oceano: "Atlántico / Mar del Norte",
-        nivel: "Avanzado - Experto",
-        break: "Reef Break (Losa)"
+        nivel: "Avanzado",
+        break: "Reef Break"
     },
     jeffreys: {
         nombre: "Jeffreys Bay",
@@ -94,56 +94,56 @@ const spots = {
         nombre: "Skeleton Bay",
         pais: "Namibia",
         oceano: "Océano Atlántico",
-        nivel: "Experto / Pro",
-        break: "Sand Point Break (Izquierda)"
+        nivel: "Pro",
+        break: "Sand Point Break"
     },
     anchorPoint: {
         nombre: "Anchor Point",
         pais: "Marruecos",
         oceano: "Océano Atlántico",
-        nivel: "Intermedio - Avanzado",
-        break: "Point Break (Derecha)"
+        nivel: "Intermedio",
+        break: "Point Break"
     },
     uluwatu: {
         nombre: "Uluwatu",
         pais: "Indonesia",
         oceano: "Océano Índico",
-        nivel: "Avanzado - Experto",
+        nivel: "Avanzado",
         break: "Reef Break"
     },
     cloudbreak: {
         nombre: "Cloudbreak",
         pais: "Fiji",
         oceano: "Océano Pacífico",
-        nivel: "Avanzado - Experto",
+        nivel: "Avanzado",
         break: "Reef Break"
     },
     snapperRocks: {
         nombre: "Snapper Rocks",
         pais: "Australia",
         oceano: "Océano Pacífico",
-        nivel: "Intermedio - Avanzado",
+        nivel: "Intermedio",
         break: "Sand Point Break"
     },
     raglan: {
         nombre: "Raglan",
         pais: "Nueva Zelanda",
         oceano: "Océano Pacífico",
-        nivel: "Intermedio - Avanzado",
-        break: "Point Break (Roca)"
+        nivel: "Avanzado",
+        break: "Point Break"
     },
     arugamBay: {
         nombre: "Arugam Bay",
         pais: "Sri Lanka",
         oceano: "Océano Índico",
-        nivel: "Principiante - Intermedio",
+        nivel: "Principiante",
         break: "Point Break"
     },
     cloud9: {
         nombre: "Cloud 9",
         pais: "Filipinas",
         oceano: "Océano Pacífico",
-        nivel: "Avanzado - Experto",
+        nivel: "Avanzado",
         break: "Reef Break"
     }
 };
