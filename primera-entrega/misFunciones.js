@@ -85,7 +85,7 @@ const spots = {
     },
     jeffreys: {
         nombre: "Jeffreys Bay",
-        pais: "Sudáfrica",
+        pais: "Sudafrica",
         oceano: "Océano Índico",
         nivel: "Avanzado",
         break: "Point Break"
