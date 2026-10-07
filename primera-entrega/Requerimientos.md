@@ -39,7 +39,7 @@
 ## Proyecto general
 - [x] NO está permitido descargar un TEMPLATE (diseño 100% desde cero)
 - [x] La página principal debe llamarse index
-- [ ] La estructura del proyecto debe ser adecuada (crear una carpeta para las imágenes, otra para los sketch/mockups).
+- [x] La estructura del proyecto debe ser adecuada (crear una carpeta para las imágenes, otra para los sketch/mockups).
 - [ ] Identar correctamente el código
 - [ ] No debe haber errores presentes (en Webstorm *Code* > *Inspect Code* para verificar que no haya errores)
 - [ ] Se debe emplear favicon
@@ -54,7 +54,7 @@
 - [ ] Poner comillas a todos los atributos
 - [x] **Title** debe contener el título de la página
 - [x] En el ```<head></head>``` incluir las etiquetas ```<meta>``` detallando: autor, descripción y palabras clave
-- [x] Emplear al menos 3 etiquetas semánticas diferentes
+- [] Emplear al menos 3 etiquetas semánticas diferentes
 - [x] Emplear ```<header></header>```. En el contenido de la cabecera debe haber un título ```<h1></h1>```, puede tener color de fondo, algún logotipo, etc.
 - [ ] La estructura de la página debe estar definida con ```<div></div>```
 - [x] Debe contener al menos 3 elementos de tipo ```<input>``` o ```<select>``` o ```<button>``` que le permitan al usuario ingresar valores para poder realizar un cálculo de un ejercicio o seleccionar opciones o llamar a una función.
@@ -70,7 +70,7 @@
 ## Imágenes
 - [ ] Debe contener por lo menos una etiqueta ```<img>``` en la página.
 - [ ] Todas las imágenes deben ser incluidas en el repositorio dentro de una carpeta llamada **imagenes** (salvo que sean demasiado pesadas. En ese caso, se puede emplear un servidor externo).
-- [ ] No se deben subir videos en el repositorio (excepto que sean MUY livianos).
+- [x] No se deben subir videos en el repositorio (excepto que sean MUY livianos).
 - [ ] Toda imagen debe tener su atributo alt
 - [ ] Las imágenes deben poseer un nombre representativo 
 

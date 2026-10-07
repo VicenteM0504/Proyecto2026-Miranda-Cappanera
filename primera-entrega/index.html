@@ -15,149 +15,252 @@
 
 <body>
 
-    <header>
+    <header class="main-header">
+        <div class="logo-titulo">
+            <img src="imagenes/circular-wave-surf-surfer-surfing-sport-club-logo-design-vector.jpg" alt="Logo surf"
+                class="logo">
+            <div class="titulos">
+                <h1>WaveSpots</h1>
+                <h5>Global Surf Information</h5>
+            </div>
+        </div>
+        <div class="search-container">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="Busqueda" name="busqueda" placeholder="Buscar por nombre, ciudad o país..."
+                maxlength="30">
+        </div>
 
-        <img src="imagenes/circular-wave-surf-surfer-surfing-sport-club-logo-design-vector.jpg" alt="Logo surf">
-        <h1>WaveSpots</h1>
-        <h5>Global Surf Information</h5>
+        <div class="filters-grid">
+            <div class="filter-group">
+                <label for="Pais">PAÍS</label>
+                <div class="select-wrapper">
+                    <span class="field-icon">🚩</span>
+                    <select name="Pais" id="Pais">
+                        <option value="">Todos</option>
+                        <option value="brasil">Brasil</option>
+                        <option value="USA">USA</option>
+                        <option value="mexico">México</option>
+                        <option value="costa rica">Costa Rica</option>
+                        <option value="el salvador">El Salvador</option>
+                        <option value="peru">Perú</option>
+                        <option value="chile">Chile</option>
+                        <option value="portugal">Portugal</option>
+                        <option value="francia">Francia</option>
+                        <option value="españa">España</option>
+                        <option value="irlanda">Irlanda</option>
+                        <option value="reino unido">Reino Unido</option>
+                        <option value="sudafrica">Sudáfrica</option>
+                        <option value="namibia">Namibia</option>
+                        <option value="marruecos">Marruecos</option>
+                        <option value="indonesia">Indonesia</option>
+                        <option value="fiji">Fiji</option>
+                        <option value="australia">Australia</option>
+                        <option value="nueva zelanda">Nueva Zelanda</option>
+                        <option value="sri lanka">Sri Lanka</option>
+                        <option value="filipinas">Filipinas</option>
+                    </select>
+                </div>
+            </div>
 
-        <p>
-            <input type="text" id="Busqueda" name="busqueda" placeholder="Buscar por nombre, ciudad, pais..." maxlength="30" size="100">
-        </p>
+            <div class="filter-group">
+                <label for="Nivel">NIVEL</label>
+                <div class="select-wrapper">
+                    <span class="field-icon">📊</span>
+                    <select name="Nivel" id="Nivel">
+                        <option value="">Todos</option>
+                        <option value="principiante">Principiante</option>
+                        <option value="intermedio">Intermedio</option>
+                        <option value="avanzado">Avanzado</option>
+                        <option value="experto">Experto</option>
+                        <option value="profesional">Profesional</option>
+                    </select>
+                </div>
+            </div>
 
-        <p>
-            <label for="Pais"> Pais: </label>
-            <select name="Pais">
-                <option value="brasil">Brasil</option>
-                <option value="USA">USA</option>
-                <option value="mexico">Mexico</option>
-                <option value="mexico">Mexico</option>
-                <option value="costa rica">Costa Rica</option>
-                <option value="el salvador">El salvador</option>
-                <option value="peru">Peru</option>
-                <option value="chile">Chile</option>
-                <option value="portugal">Portugal</option>
-                <option value="francia">Francia</option>
-                <option value="españa">España</option>
-                <option value="irlanda">Irlanda</option>
-                <option value="reino unido">Reino Unido</option>
-                <option value="sudafrica">Sudafrica</option>
-                <option value="namibia">Namibia</option>
-                <option value="marruecos">Marruecos</option>
-                <option value="indonesia">Indonesia</option>
-                <option value="fiji">Fiji</option>
-                <option value="australia">Australia</option>
-                <option value="nueva zelanda">Nueva zelanda</option>
-                <option value="sri lanka">Sri Lanka</option>
-                <option value="filipinas">Filipinas</option>
-            </select>
-        </p>
-        <p>
-            <label for="Nivel"> Nivel: </label>
-            <select name="Nivel">
-                <option value="principiante">Principiante</option>
-                <option value="intermedio">Intermedio</option>
-                <option value="avanzado">Avanzado</option>
-                <option value="experto">Experto</option>
-                <option value="profesional">Profesional</option>
-            </select>
-        </p>
+            <div class="filter-group">
+                <label for="Oceano">OCÉANO / MAR</label>
+                <div class="select-wrapper">
+                    <span class="field-icon">🌙</span>
+                    <select name="Oceano" id="Oceano">
+                        <option value="">Todos</option>
+                        <option value="pacifico">Pacífico</option>
+                        <option value="atlantico">Atlántico</option>
+                        <option value="antartico">Antártico</option>
+                        <option value="mar-cantabrico">Mar Cantábrico</option>
+                        <option value="mar-del-norte">Mar del Norte</option>
+                    </select>
+                </div>
+            </div>
 
-        <p>
-            <label for="Oceano"> Oceano/mar: </label>
-            <select name="Oceano">
-                <option value="pacifico">Pacifico</option>
-                <option value="atlantico">Atlantico</option>
-                <option value="antartico">Antartico</option>
-                <option value="mar-cantabrico">Mar cantabrico</option>
-                <option value="mar-del-norte">Mar del norte</option>
-            </select>
-        </p>
-
-        <p>
-            <label for="Ola"> Tipo de ola: </label>
-            <select name="Ola">
-                <option value="reef-break">Reef break</option>
-                <option value="beach-break">Beach break</option>
-                <option value="point-break">Point break</option>
-                <option value="river-mouth">River mouth</option>
-            </select>
-        </p>
+            <div class="filter-group">
+                <label for="Ola">TIPO DE OLA</label>
+                <div class="select-wrapper">
+                    <span class="field-icon">⇅</span>
+                    <select name="Ola" id="Ola">
+                        <option value="">Todos</option>
+                        <option value="reef-break">Reef break</option>
+                        <option value="beach-break">Beach break</option>
+                        <option value="point-break">Point break</option>
+                        <option value="river-mouth">River mouth</option>
+                    </select>
+                </div>
+            </div>
+        </div>
     </header>
 
-    <nav>
-
-    </nav>
-
-
     <main>
-        
+        <div class="mapa-container">
+
+            <img src="imagenes/mapamundi.jpg" alt="Mapa mundial" class="mapa">
+
+            <button class="punto saquearema" style="top: 76%; left: 36%;" onclick="mostrarSpot('Saquarema')">
+                ●
+            </button>
+
+            <button class="punto pipeline" style="top: 50%; left: 4%;" onclick="mostrarSpot('Pipeline')">
+                ●
+            </button>
+
+            <button class="punto puerto escondido" style="top: 52%; left: 19%;"
+                onclick="mostrarSpot('Puerto Escondido')">
+                ●
+            </button>
+
+            <button class="punto pavones" style="top: 56%; left: 23%;" onclick="mostrarSpot('Pavones')">
+                ●
+            </button>
+
+            <button class="punto punta roca" style="top: 53%; left: 21%;" onclick="mostrarSpot('Punta Roca')">
+                ●
+            </button>
+
+            <button class="punto chicama" style="top: 67%; left: 25%;" onclick="mostrarSpot('Chicama')">
+                ●
+            </button>
+
+            <button class="punto punta de lobos" style="top: 80%; left: 27.5%;" onclick="mostrarSpot('Punta de Lobos')">
+                ●
+            </button>
+
+            <button class="punto nazare" style="top: 37%; left: 44.5%;" onclick="mostrarSpot('Nazaré')">
+                ●
+            </button>
+
+            <button class="punto hossegor" style="top: 33%; left: 46.5%;" onclick="mostrarSpot('Hossegor')">
+                ●
+            </button>
+
+            <button class="punto mundaka" style="top: 35%; left: 45.7%;" onclick="mostrarSpot('Mundaka')">
+                ●
+            </button>
+
+            <button class="punto bundoran" style="top: 27%; left: 45%;" onclick="mostrarSpot('Bundoran')">
+                ●
+            </button>
+
+            <button class="punto thurso east" style="top: 25%; left: 46.7%;" onclick="mostrarSpot('Thurso East')">
+                ●
+            </button>
+
+            <button class="punto jeffreys bay" style="top: 83.5%; left: 54.5%;" onclick="mostrarSpot('Jeffreys Bay')">
+                ●
+            </button>
+
+            <button class="punto skeleton bay" style="top: 76%; left: 51%;" onclick="mostrarSpot('Skeleton Bay')">
+                ●
+            </button>
+
+            <button class="punto anchor point" style="top: 44%; left: 44.5%;" onclick="mostrarSpot('Anchor Point')">
+                ●
+            </button>
+
+            <button class="punto uluwatu" style="top: 68%; left: 77.5%;" onclick="mostrarSpot('Uluwatu')">
+                ●
+            </button>
+
+            <button class="punto cloudbreak" style="top: 74%; left: 97%;" onclick="mostrarSpot('Cloudbreak')">
+                ●
+            </button>
+
+            <button class="punto snapper rocks" style="top: 83%; left: 89.4%;" onclick="mostrarSpot('Snapper Rocks')">
+                ●
+            </button>
+
+            <button class="punto raglan" style="top: 88%; left: 95%;" onclick="mostrarSpot('Raglan')">
+                ●
+            </button>
+
+            <button class="punto arugam bay" style="top: 59.3%; left: 70%;" onclick="mostrarSpot('Arugam Bay')">
+                ●
+            </button>
+
+            <button class="punto cloud 9" style="top: 55%; left: 82%;" onclick="mostrarSpot('Cloud 9')">
+                ●
+            </button>
+
+        </div>
     </main>
 
     <footer>
-     <div class="tarjeta">
+        <div class="tarjeta">
 
-        <div class="imagen-tarjeta"
-        style="background-image: url('imagenes/Jbay.jpg');">
-            <span class="Avanzado">avanzado</span>
-            <span class="break">point break</span>
-            <div class="estrellas">★★★★★</div>
+            <div class="imagen-tarjeta" style="background-image: url('imagenes/Jbay.jpg');">
+                <span class="Avanzado">avanzado</span>
+                <span class="break">point break</span>
+                <div class="estrellas">★★★★★</div>
+            </div>
+
+            <div class="contenido-tarjeta">
+
+
+                <div class="title-row">
+                    <h2>Jeffreys Bay</h2>
+                    <a href="https://www.windguru.cz/68531" class="clima" target="_blank" rel="noopener noreferrer">
+                        Clima
+                    </a>
+                </div>
+
+
+                <p class="ubicacion">
+                    Jeffrey's Bay · South Africa · Indian Ocean
+                </p>
+
+                <p class="description">
+                    Una de las mejores olas de derecha del mundo, famosa por sus secciones veloces y tubulares.
+                </p>
+
+                <div class="info-grid">
+
+                    <div class="info-box">
+                        <span>ALTURA DE OLA</span>
+                        <p>4-10 ft</p>
+                    </div>
+
+                    <div class="info-box">
+                        <span>MEJOR TEMPORADA</span>
+                        <p>Jun - Ago</p>
+                    </div>
+
+                    <div class="info-box">
+                        <span>VIENTO</span>
+                        <p>SW Offshore</p>
+                    </div>
+
+                    <div class="info-box">
+                        <span>BREAK</span>
+                        <p>Point Break</p>
+                    </div>
+
+                </div>
+
+                <div class="tags">
+                    <span>Paredes largas</span>
+                    <span>Derecha</span>
+                    <span>WSL Stop</span>
+                </div>
+
+            </div>
         </div>
-
-        <div class="contenido-tarjeta">
-
-          
-            <div class="title-row">
-                <h2>Jeffreys Bay</h2>
-                <a href="https://www.windguru.cz/68531"
-                class="clima"
-                target="_blank"
-                rel="noopener noreferrer">
-                Clima
-                </a>
-            </div>
-
-        
-            <p class="ubicacion">
-                Jeffrey's Bay · South Africa · Indian Ocean
-            </p>
-
-            <p class="description">
-               Una de las mejores olas de derecha del mundo, famosa por sus secciones veloces y tubulares.
-            </p>
-
-            <div class="info-grid">
-
-                <div class="info-box">
-                    <span>ALTURA DE OLA</span>
-                    <p>4-10 ft</p>
-                </div>
-
-                <div class="info-box">
-                    <span>MEJOR TEMPORADA</span>
-                    <p>Jun - Ago</p>
-                </div>
-
-                <div class="info-box">
-                    <span>VIENTO</span>
-                    <p>SW Offshore</p>
-                </div>
-
-                <div class="info-box">
-                    <span>BREAK</span>
-                    <p>Point Break</p>
-                </div>
-
-            </div>
-
-            <div class="tags">
-                <span>Paredes largas</span>
-                <span>Derecha</span>
-                <span>WSL Stop</span>
-            </div>
-
-        </div>
-    </div>
-</footer>
+    </footer>
 
 </body>
