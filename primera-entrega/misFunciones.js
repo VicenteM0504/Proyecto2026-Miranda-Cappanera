@@ -1,20 +1,20 @@
 const spots = {
     saquarema: {
-        nombre: "Saquarema (Itaúna)",
+        nombre: "Saquarema",
         pais: "Brasil",
         oceano: "Océano Atlántico",
         nivel: "Intermedio - Avanzado",
         break: "Beach / Point Break"
     },
     pipeline: {
-        nombre: "Banzai Pipeline",
+        nombre: "Pipeline",
         pais: "USA",
         oceano: "Océano Pacífico",
         nivel: "Experto / Pro",
         break: "Reef Break"
     },
     puertoEscondido: {
-        nombre: "Puerto Escondido (Zicatela)",
+        nombre: "Puerto Escondido",
         pais: "México",
         oceano: "Océano Pacífico",
         nivel: "Avanzado - Experto",
@@ -49,14 +49,14 @@ const spots = {
         break: "Point Break (Izquierda)"
     },
     nazare: {
-        nombre: "Nazaré (Praia do Norte)",
+        nombre: "Nazaré",
         pais: "Portugal",
         oceano: "Océano Atlántico",
         nivel: "Experto / Ola Grande",
         break: "Beach Break (Cañón)"
     },
     hossegor: {
-        nombre: "Hossegor (La Gravière)",
+        nombre: "Hossegor",
         pais: "Francia",
         oceano: "Océano Atlántico",
         nivel: "Avanzado - Experto",
@@ -126,7 +126,7 @@ const spots = {
         break: "Sand Point Break"
     },
     raglan: {
-        nombre: "Raglan (Manu Bay)",
+        nombre: "Raglan",
         pais: "Nueva Zelanda",
         oceano: "Océano Pacífico",
         nivel: "Intermedio - Avanzado",
