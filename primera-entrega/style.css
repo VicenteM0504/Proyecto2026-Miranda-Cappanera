@@ -8,6 +8,8 @@ body {
     color: #1a4d4e;
 }
 
+/*HEADER*/
+
 .logo-titulo {
     display: flex;
     justify-content: center;
@@ -89,6 +91,15 @@ body {
     .filters-grid {
         grid-template-columns: 1fr;
     }
+
+       .imagen-tarjeta {
+        height: 180px;
+    }
+
+    .description {
+        font-size: 14px;
+    }
+
 }
 
 .filter-group label {
@@ -125,7 +136,7 @@ body {
 
 
 
-
+/*MAPA*/
 
 main {
     max-width: 1200px;
@@ -172,3 +183,147 @@ main {
     transform: translate(-50%, -50%) scale(1.3);
     background-color: #00a896;
 }
+
+
+/*FOOTER*/
+
+.tarjeta {
+    width: 100%;
+    background-color: white;
+    border: 1px solid #75c9c0;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.imagen-tarjeta {
+    height: 220px;
+
+    position: relative;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.Nivel2 {
+    position: absolute;
+
+    top: 15px;
+    left: 15px;
+
+    padding: 8px 12px;
+
+    background-color: #fff8ed;
+    color: #d58b27;
+
+    border: 1px solid #f0d5a7;
+    border-radius: 8px;
+
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.estrellas {
+    position: absolute;
+
+    bottom: 15px;
+    left: 18px;
+
+    color: #008f83;
+
+    font-size: 18px;
+    letter-spacing: 4px;
+}
+
+.contenido-tarjeta {
+    padding: 20px;
+}
+
+.title-row {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title-row h2 {
+    margin: 0;
+
+    font-size: 21px;
+}
+
+.clima {
+    padding: 7px 12px;
+
+    color: #008f83;
+    background-color: #edf8f6;
+
+    border: 1px solid #b5e2dc;
+    border-radius: 10px;
+
+    font-size: 13px;
+
+    text-decoration: none;
+}
+
+.clima:hover {
+    background-color: #d5efea;
+    border-color: #008f83;
+}
+
+.ubicacion {
+    margin-top: 10px;
+
+    color: #008f83;
+
+    font-family: monospace;
+    font-size: 14px;
+}
+
+.description {
+    margin-top: 18px;
+    margin-bottom: 20px;
+
+    color: #55716f;
+
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.info-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+}
+
+.info-box {
+    padding: 12px 15px;
+
+    background-color: #e0f2ef;
+
+    border-radius: 10px;
+}
+
+.info-box span {
+    color: #008f83;
+
+    font-family: monospace;
+    font-size: 12px;
+
+    letter-spacing: 1px;
+}
+
+.info-box p {
+    margin: 5px 0 0;
+
+    font-size: 14px;
+}
+
+
+
+
+
