@@ -19,8 +19,8 @@
 
 ## Wireframe/Mockup
 - [x] Dibujado con algún programa como: Figma, AdobeXD, Canvas, Draw.io en Drive, Pencil Project, Mockups, NinjaMock, o similares.
-- [x] Diseño de Mensajes de error para el usuario
-- [x] Versión Desktop y Mobile
+- [] Diseño de Mensajes de error para el usuario
+- [] Versión Desktop y Mobile
 - [x] Guardado en formato PNG, JPG ó PDF
 - [x] Dentro de una carpeta llamada "Wireframe" ó "Mockup"
 
@@ -44,13 +44,13 @@
 - [ ] No debe haber errores presentes (en Webstorm *Code* > *Inspect Code* para verificar que no haya errores)
 - [ ] Se debe emplear favicon
 - [ ] Emplear alguna fuente de google fonts o subir al proyecto alguna fuente externa (aunque sea para un título)
-- [ ] Debe haber navegación entre todas las páginas
+- [x] Debe haber navegación entre todas las páginas
 - [ ] No debe haber errores de ortografía en el contenido visual
-- [ ] "Lorem ipsum" es sólo válido para los prototipos, NO para la página
+- [x] "Lorem ipsum" es sólo válido para los prototipos, NO para la página
 - [ ] No debe existir código comentado
 
 ## Sobre el HTML
-- [ ] Todas las etiquetas deben estar en minúscula
+- [x] Todas las etiquetas deben estar en minúscula
 - [ ] Poner comillas a todos los atributos
 - [x] **Title** debe contener el título de la página
 - [x] En el ```<head></head>``` incluir las etiquetas ```<meta>``` detallando: autor, descripción y palabras clave
@@ -61,15 +61,15 @@
 - [x] Emplear el atributo **placeholder** (mínimamente en 1 input)
 - [ ] Emplear el atributo **size** para que el tamaño de los inputs sea prolijo
 - [x] Emplear el atributo **maxlength** para que el usurario no pueda ingresar valores "muy grandes"
-- [ ] No espaciar con excesivos ```<br>```. Utilizar márgenes, paddings, etc.
-- [ ] La anidación de etiquetas HTML debe ser correcta.
+- [x] No espaciar con excesivos ```<br>```. Utilizar márgenes, paddings, etc.
+- [x] La anidación de etiquetas HTML debe ser correcta.
 - [ ] No utilizar etiquetas deprecadas.
-- [ ] Todas las etiquetas que correspondan deben estar correctamente cerradas
-- [ ] Los ids de los elementos deben ser unívocos
+- [x] Todas las etiquetas que correspondan deben estar correctamente cerradas
+- [x] Los ids de los elementos deben ser unívocos
 
 ## Imágenes
-- [ ] Debe contener por lo menos una etiqueta ```<img>``` en la página.
-- [ ] Todas las imágenes deben ser incluidas en el repositorio dentro de una carpeta llamada **imagenes** (salvo que sean demasiado pesadas. En ese caso, se puede emplear un servidor externo).
+- [x] Debe contener por lo menos una etiqueta ```<img>``` en la página.
+- [x] Todas las imágenes deben ser incluidas en el repositorio dentro de una carpeta llamada **imagenes** (salvo que sean demasiado pesadas. En ese caso, se puede emplear un servidor externo).
 - [x] No se deben subir videos en el repositorio (excepto que sean MUY livianos).
 - [ ] Toda imagen debe tener su atributo alt
 - [ ] Las imágenes deben poseer un nombre representativo 
@@ -91,12 +91,12 @@
 #### Sobre la funcionalidad JavaScript
 Se debe agregar funcionalidad Js a la página HTML+CSS desarrollada
 - [ ] Una función que compruebe si los valores ingresados son correctos, y si no lo son, que le indique al usuario por un alert o dialog, y que blanquee el contenido del campo.
-- [ ] Una función que calcule/muestre algo en base a los valores ingresados por el usuario en los inputs.
-- [ ] El código Js debe estar en un archivo externo
-- [ ] Se debe emplear var, let o const según corresponda para mayor eficiencia
+- [x] Una función que calcule/muestre algo en base a los valores ingresados por el usuario en los inputs.
+- [x] El código Js debe estar en un archivo externo
+- [x] Se debe emplear var, let o const según corresponda para mayor eficiencia
 - [ ] Los event listener deben ser colocados en el HTML
-- [ ] No deben existir funciones innecesarias que no se llamen en ninguna sección del código
-- [ ] Las funciones deben estar escritas cómo **función flecha**
+- [x] No deben existir funciones innecesarias que no se llamen en ninguna sección del código
+- [x] Las funciones deben estar escritas cómo **función flecha**
 - [ ] No debe haber errores JavaScript presentes (F12 > Consola)
 - [ ] El funcionamiento de la página debe ser consistente.
 
