@@ -176,7 +176,7 @@ main {
   left: 4%;
 }
 
-.punto.puerto.escondido {
+.punto.puerto-escondido {
   top: 52%;
   left: 19%;
 }
@@ -186,7 +186,7 @@ main {
   left: 23%;
 }
 
-.punto.punta.roca {
+.punto.punta-roca {
   top: 53%;
   left: 21%;
 }
@@ -196,7 +196,7 @@ main {
   left: 25%;
 }
 
-.punto.punta.de.lobos {
+.punto.punta-de-lobos {
   top: 80%;
   left: 27.5%;
 }
@@ -221,22 +221,22 @@ main {
   left: 45%;
 }
 
-.punto.thurso.east {
+.punto.thurso-east {
   top: 25%;
   left: 46.7%;
 }
 
-.punto.jeffreys.bay {
+.punto.jeffreys-bay {
   top: 83.5%;
   left: 54.5%;
 }
 
-.punto.skeleton.bay {
+.punto.skeleton-bay {
   top: 76%;
   left: 51%;
 }
 
-.punto.anchor.point {
+.punto.anchor-point {
   top: 44%;
   left: 44.5%;
 }
@@ -251,7 +251,7 @@ main {
   left: 97%;
 }
 
-.punto.snapper.rocks {
+.punto.snapper-rocks {
   top: 83%;
   left: 89.4%;
 }
@@ -261,7 +261,7 @@ main {
   left: 95%;
 }
 
-.punto.arugam.bay {
+.punto.arugam-bay {
   top: 59.3%;
   left: 70%;
 }
@@ -410,6 +410,12 @@ main {
     margin: 5px 0 0;
 
     font-size: 14px;
+}
+
+#listaSpots {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
 }
 
 
