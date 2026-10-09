@@ -54,16 +54,16 @@
 - [x] Poner comillas a todos los atributos
 - [x] **Title** debe contener el título de la página
 - [x] En el ```<head></head>``` incluir las etiquetas ```<meta>``` detallando: autor, descripción y palabras clave
-- [] Emplear al menos 3 etiquetas semánticas diferentes
+- [x] Emplear al menos 3 etiquetas semánticas diferentes
 - [x] Emplear ```<header></header>```. En el contenido de la cabecera debe haber un título ```<h1></h1>```, puede tener color de fondo, algún logotipo, etc.
-- [ ] La estructura de la página debe estar definida con ```<div></div>```
+- [X] La estructura de la página debe estar definida con ```<div></div>```
 - [x] Debe contener al menos 3 elementos de tipo ```<input>``` o ```<select>``` o ```<button>``` que le permitan al usuario ingresar valores para poder realizar un cálculo de un ejercicio o seleccionar opciones o llamar a una función.
 - [x] Emplear el atributo **placeholder** (mínimamente en 1 input)
-- [ ] Emplear el atributo **size** para que el tamaño de los inputs sea prolijo
+- [x] Emplear el atributo **size** para que el tamaño de los inputs sea prolijo
 - [x] Emplear el atributo **maxlength** para que el usurario no pueda ingresar valores "muy grandes"
 - [x] No espaciar con excesivos ```<br>```. Utilizar márgenes, paddings, etc.
 - [x] La anidación de etiquetas HTML debe ser correcta.
-- [ ] No utilizar etiquetas deprecadas.
+- [x] No utilizar etiquetas deprecadas.
 - [x] Todas las etiquetas que correspondan deben estar correctamente cerradas
 - [x] Los ids de los elementos deben ser unívocos
 
@@ -71,11 +71,11 @@
 - [x] Debe contener por lo menos una etiqueta ```<img>``` en la página.
 - [x] Todas las imágenes deben ser incluidas en el repositorio dentro de una carpeta llamada **imagenes** (salvo que sean demasiado pesadas. En ese caso, se puede emplear un servidor externo).
 - [x] No se deben subir videos en el repositorio (excepto que sean MUY livianos).
-- [ ] Toda imagen debe tener su atributo alt
-- [ ] Las imágenes deben poseer un nombre representativo 
+- [x] Toda imagen debe tener su atributo alt
+- [x] Las imágenes deben poseer un nombre representativo 
 
 ## Sobre el CSS
-- [ ] El estilo de los elementos debe establecerse en un archivo CSS (prohibido poner el atributo style a los elementos o emplear estilos incrustados).
+- [] El estilo de los elementos debe establecerse en un archivo CSS (prohibido poner el atributo style a los elementos o emplear estilos incrustados).
 - [ ] El CSS debe contar mínimo con un tipo de cada forma (por Tag, por ID y por clase).
 - [ ] Se debe emplear pseudoclase
 - [ ] No emplear ```!important```

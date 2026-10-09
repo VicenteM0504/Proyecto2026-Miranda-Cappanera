@@ -4,13 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="author" content="Vicente Miranda-Juan Cappanera" />
     <meta name="description" content="Pagina orientada a las olas y el surf" />
-    <meta name="keywords" content="surf, olas, pais, mar,  " />
+    <meta name="keywords" content="surf, olas, pais, oceano" />
 
-    <link
-      rel="icon"
-      href="imagenes/circular-wave-surf-surfer-surfing-sport-club-logo-design-vector.jpg"
-      type="image/jpeg"
-    />
+    <link rel="icon" href="imagenes/logo.jpg" type="image/jpeg" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -28,11 +24,7 @@
   <body>
     <header class="main-header">
       <div class="logo-titulo">
-        <img
-          src="imagenes/circular-wave-surf-surfer-surfing-sport-club-logo-design-vector.jpg"
-          alt="Logo surf"
-          class="logo"
-        />
+        <img src="imagenes/logo.jpg" alt="Logo surf" class="logo" />
         <div class="titulos">
           <h1>WaveSpots</h1>
           <h5>Global Surf Information</h5>
@@ -46,11 +38,12 @@
           name="busqueda"
           placeholder="Buscar por nombre, ciudad o país..."
           maxlength="30"
+          size="30"
           onchange="filtrarTarjeta()"
         />
       </div>
 
-      <div class="filters-grid">
+      <section class="filters-grid">
         <div class="filter-group">
           <label for="Pais">PAÍS</label>
           <div class="select-wrapper">
@@ -124,112 +117,67 @@
             </select>
           </div>
         </div>
-      </div>
+      </section>
     </header>
 
     <main>
       <div class="mapa-container">
         <img src="imagenes/mapamundi.jpg" alt="Mapa mundial" class="mapa" />
 
-        <button
-          class="punto saquearema"
-          style="top: 76%; left: 36%"
-          onclick="mostrarSpot('Saquarema')"
-        >
+        <button class="punto saquearema" onclick="mostrarSpot('Saquarema')">
           ●
         </button>
 
-        <button
-          class="punto pipeline"
-          style="top: 50%; left: 4%"
-          onclick="mostrarSpot('Pipeline')"
-        >
+        <button class="punto pipeline" onclick="mostrarSpot('Pipeline')">
           ●
         </button>
 
         <button
           class="punto puerto escondido"
-          style="top: 52%; left: 19%"
           onclick="mostrarSpot('Puerto Escondido')"
         >
           ●
         </button>
 
-        <button
-          class="punto pavones"
-          style="top: 56%; left: 23%"
-          onclick="mostrarSpot('Pavones')"
-        >
+        <button class="punto pavones" onclick="mostrarSpot('Pavones')">
           ●
         </button>
 
-        <button
-          class="punto punta roca"
-          style="top: 53%; left: 21%"
-          onclick="mostrarSpot('Punta Roca')"
-        >
+        <button class="punto punta roca" onclick="mostrarSpot('Punta Roca')">
           ●
         </button>
 
-        <button
-          class="punto chicama"
-          style="top: 67%; left: 25%"
-          onclick="mostrarSpot('Chicama')"
-        >
+        <button class="punto chicama" onclick="mostrarSpot('Chicama')">
           ●
         </button>
 
         <button
           class="punto punta de lobos"
-          style="top: 80%; left: 27.5%"
           onclick="mostrarSpot('Punta de Lobos')"
         >
           ●
         </button>
 
-        <button
-          class="punto nazare"
-          style="top: 37%; left: 44.5%"
-          onclick="mostrarSpot('Nazaré')"
-        >
+        <button class="punto nazare" onclick="mostrarSpot('Nazaré')">●</button>
+
+        <button class="punto hossegor" onclick="mostrarSpot('Hossegor')">
           ●
         </button>
 
-        <button
-          class="punto hossegor"
-          style="top: 33%; left: 46.5%"
-          onclick="mostrarSpot('Hossegor')"
-        >
+        <button class="punto mundaka" onclick="mostrarSpot('Mundaka')">
           ●
         </button>
 
-        <button
-          class="punto mundaka"
-          style="top: 35%; left: 45.7%"
-          onclick="mostrarSpot('Mundaka')"
-        >
+        <button class="punto bundoran" onclick="mostrarSpot('Bundoran')">
           ●
         </button>
 
-        <button
-          class="punto bundoran"
-          style="top: 27%; left: 45%"
-          onclick="mostrarSpot('Bundoran')"
-        >
-          ●
-        </button>
-
-        <button
-          class="punto thurso east"
-          style="top: 25%; left: 46.7%"
-          onclick="mostrarSpot('Thurso East')"
-        >
+        <button class="punto thurso east" onclick="mostrarSpot('Thurso East')">
           ●
         </button>
 
         <button
           class="punto jeffreys bay"
-          style="top: 83.5%; left: 54.5%"
           onclick="mostrarSpot('Jeffreys Bay')"
         >
           ●
@@ -237,7 +185,6 @@
 
         <button
           class="punto skeleton bay"
-          style="top: 76%; left: 51%"
           onclick="mostrarSpot('Skeleton Bay')"
         >
           ●
@@ -245,57 +192,33 @@
 
         <button
           class="punto anchor point"
-          style="top: 44%; left: 44.5%"
           onclick="mostrarSpot('Anchor Point')"
         >
           ●
         </button>
 
-        <button
-          class="punto uluwatu"
-          style="top: 68%; left: 77.5%"
-          onclick="mostrarSpot('Uluwatu')"
-        >
+        <button class="punto uluwatu" onclick="mostrarSpot('Uluwatu')">
           ●
         </button>
 
-        <button
-          class="punto cloudbreak"
-          style="top: 74%; left: 97%"
-          onclick="mostrarSpot('Cloudbreak')"
-        >
+        <button class="punto cloudbreak" onclick="mostrarSpot('Cloudbreak')">
           ●
         </button>
 
         <button
           class="punto snapper rocks"
-          style="top: 83%; left: 89.4%"
           onclick="mostrarSpot('Snapper Rocks')"
         >
           ●
         </button>
 
-        <button
-          class="punto raglan"
-          style="top: 88%; left: 95%"
-          onclick="mostrarSpot('Raglan')"
-        >
+        <button class="punto raglan" onclick="mostrarSpot('Raglan')">●</button>
+
+        <button class="punto arugam bay" onclick="mostrarSpot('Arugam Bay')">
           ●
         </button>
 
-        <button
-          class="punto arugam bay"
-          style="top: 59.3%; left: 70%"
-          onclick="mostrarSpot('Arugam Bay')"
-        >
-          ●
-        </button>
-
-        <button
-          class="punto cloud 9"
-          style="top: 55%; left: 82%"
-          onclick="mostrarSpot('Cloud 9')"
-        >
+        <button class="punto cloud-9" onclick="mostrarSpot('Cloud 9')">
           ●
         </button>
       </div>
