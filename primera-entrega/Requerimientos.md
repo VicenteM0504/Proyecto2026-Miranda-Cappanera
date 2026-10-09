@@ -19,8 +19,8 @@
 
 ## Wireframe/Mockup
 - [x] Dibujado con algún programa como: Figma, AdobeXD, Canvas, Draw.io en Drive, Pencil Project, Mockups, NinjaMock, o similares.
-- [] Diseño de Mensajes de error para el usuario
-- [] Versión Desktop y Mobile
+- [x] Diseño de Mensajes de error para el usuario
+- [x] Versión Desktop y Mobile
 - [x] Guardado en formato PNG, JPG ó PDF
 - [x] Dentro de una carpeta llamada "Wireframe" ó "Mockup"
 
@@ -32,26 +32,26 @@
 - [ ] El código debe estar en **gitHubPages** (emplear gh-pages o configurar github para que se tome a la main como la página a visualizar)
 - [x] Se debe crear al menos una branch por cada desarrollador
 - [ ] Publicar la Web empleando GitHubPages
-- [ ] El repositorio no debe contener archivos innecesarios (no debe contener .idea o .vsc o .DS_Store o node_modules, en todo caso emplear **.gitignore**)
+- [x] El repositorio no debe contener archivos innecesarios (no debe contener .idea o .vsc o .DS_Store o node_modules, en todo caso emplear **.gitignore**)
 - [x] Se debe emplear conventional commits
-- [ ] El historial debe ser consistente y tener al menos 10 commits separados en al menos 4 días
+- [x] El historial debe ser consistente y tener al menos 10 commits separados en al menos 4 días
 
 ## Proyecto general
 - [x] NO está permitido descargar un TEMPLATE (diseño 100% desde cero)
 - [x] La página principal debe llamarse index
 - [x] La estructura del proyecto debe ser adecuada (crear una carpeta para las imágenes, otra para los sketch/mockups).
-- [ ] Identar correctamente el código
+- [x] Identar correctamente el código
 - [ ] No debe haber errores presentes (en Webstorm *Code* > *Inspect Code* para verificar que no haya errores)
-- [ ] Se debe emplear favicon
-- [ ] Emplear alguna fuente de google fonts o subir al proyecto alguna fuente externa (aunque sea para un título)
+- [x] Se debe emplear favicon
+- [x] Emplear alguna fuente de google fonts o subir al proyecto alguna fuente externa (aunque sea para un título)
 - [x] Debe haber navegación entre todas las páginas
 - [ ] No debe haber errores de ortografía en el contenido visual
 - [x] "Lorem ipsum" es sólo válido para los prototipos, NO para la página
-- [ ] No debe existir código comentado
+- [x] No debe existir código comentado
 
 ## Sobre el HTML
 - [x] Todas las etiquetas deben estar en minúscula
-- [ ] Poner comillas a todos los atributos
+- [x] Poner comillas a todos los atributos
 - [x] **Title** debe contener el título de la página
 - [x] En el ```<head></head>``` incluir las etiquetas ```<meta>``` detallando: autor, descripción y palabras clave
 - [] Emplear al menos 3 etiquetas semánticas diferentes
