@@ -394,6 +394,12 @@ let filtrarTarjeta = () => {
 };
 
 
+
+
+
+let spotSeleccionado = null;
+
+
 /**
  * Selecciona un spot desde la interaccion con un boton desde el mapa, y ejecuta el filtrado de tarjetas.
  * @method mostrarSpot
@@ -401,10 +407,26 @@ let filtrarTarjeta = () => {
  */
 
 let mostrarSpot = (nombreSpot) => {
+  if (spotSeleccionado === nombreSpot) {
+    spotSeleccionado = null;
+    document.getElementById("Busqueda").value = "";
+    document.getElementById("Pais").value = "";
+    document.getElementById("Nivel").value = "";
+    document.getElementById("Ola").value = "";
+    document.getElementById("Oceano").value = "";
+    mostrarTarjetas(spots);
+    return;
+  }
+
+  spotSeleccionado = nombreSpot;
   let newLista = spots.filter(
     (spo) => spo.nombre.toLowerCase() == nombreSpot.toLowerCase()
   );
   mostrarTarjetas(newLista);
+
+  if (window.innerWidth <= 900) {
+    document.getElementById("listaSpots").scrollIntoView({ behavior: "smooth", block: "start" });
+  }
 };
 
 

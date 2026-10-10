@@ -126,10 +126,15 @@ main {
     position: relative;
     width: 100%;
     border-radius: 16px;
-    overflow: hidden;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
     border: 2px solid #bbf0ee;
     background-color: #c5eeea;
+    margin-bottom: 30px;
+}
+
+.mapa-inner {
+    position: relative;
+    width: 100%;
 }
 
 .mapa {
@@ -155,6 +160,7 @@ main {
     padding: 0;
     outline: none;
     transition: transform 0.2s, background-color 0.2s;
+    z-index: 2;
 }
 
 .punto:hover {
@@ -406,7 +412,14 @@ main {
     font-size: 14px;
 }
 
+footer {
+    max-width: 1200px;
+    margin: 0 auto 30px;
+    padding: 0 20px;
+}
+
 #listaSpots {
+    scroll-margin-top: 12px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 20px;
@@ -424,17 +437,43 @@ main {
 }
 
 @media (max-width: 500px) {
+    .titulos h1 {
+        font-size: 32px;
+        margin-left: 10px;
+    }
+
     .filters-grid {
         grid-template-columns: 1fr;
     }
 
-       .imagen-tarjeta {
-        height: 180px;
+    .main-header {
+        padding: 20px 16px;
     }
 
-    .description {
-        font-size: 14px;
+    main,
+    footer {
+        padding: 0 16px;
     }
 
+    .mapa-container {
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .mapa-inner {
+        width: 900px;
+    }
+
+    .punto {
+        width: 16px;
+        height: 16px;
+    }
+
+    #listaSpots {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        width: 100%;
+        margin-top: 20px;
+    }
 }
-
