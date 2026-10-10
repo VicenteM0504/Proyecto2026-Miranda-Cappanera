@@ -20,7 +20,7 @@ Podés acceder a la versión publicada en vivo en el siguiente enlace:
 ---
 
 ## Contenido del proyecto
-La web contiene principalmente una busqueda por filtros(**pais, nivel, ciudad, oceano/mar y tipo de ola**) o sino el usuario puede hacer una busqueda normal. Abajo de los filtros les mostramos radar de spots ubicados en mapa del mundo. El en mapa, arriba a la izquierda aparece un cartel que indica los spots activos que se van actualizando en dependencia de los filtros. Sobre el costado derecho, tenemos un (**+,- y un circulo con un punto centrado**) que sirve basicamente para hacer zoom al mapa todo lo que quiera el usuario. Abajo a la izquierda tenemos el zoom que el usuario le aplico.
+La web contiene principalmente una busqueda por filtros(**pais, nivel, ciudad, oceano/mar y tipo de ola**) o sino el usuario puede hacer una busqueda normal. Abajo de los filtros les mostramos radar de spots ubicados en mapa del mundo. El en mapa, arriba a la izquierda aparece un cartel que indica los spots activos que se van actualizando en dependencia de los filtros. Sobre el mismo mapa hay puntos que nos permiten filtrar los mismos spots.
 
 ---
 
@@ -37,9 +37,16 @@ Abajo del mapa, tenemos el apartado de los spots disponibles en relacion de depe
 
 ---
 ## Mockup
-**link:** https://www.figma.com/make/DMlnms4VNc9wmStelxs8C4/Dise%25C3%25B1o-alta-fidelidad-surf-app?p=f&t=lU8ZtO9uTGVjiRFq-0
+**link:** https://www.figma.com/make/DMlnms4VNc9wmStelxs8C4/Dise%C3%B1o-alta-fidelidad-surf-app?t=FyymSFHFSKTF3OTS-1
+
+
 
 ---
+
+##  Aclaraciones
+
+-Se aclaro en clase con la profe, que como no nos deja descargarlo, se la añade por correo (ademas del link adjunto).
+-Se acordo en clase que no hay navegacion entre paginas.
 
 ## Autores
 Vicente Miranda

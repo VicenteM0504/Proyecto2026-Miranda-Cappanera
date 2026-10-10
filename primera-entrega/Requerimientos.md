@@ -19,8 +19,8 @@
 
 ## Wireframe/Mockup
 - [x] Dibujado con algún programa como: Figma, AdobeXD, Canvas, Draw.io en Drive, Pencil Project, Mockups, NinjaMock, o similares.
-- [] Diseño de Mensajes de error para el usuario
-- [] Versión Desktop y Mobile
+- [x] Diseño de Mensajes de error para el usuario
+- [x] Versión Desktop y Mobile
 - [x] Guardado en formato PNG, JPG ó PDF
 - [x] Dentro de una carpeta llamada "Wireframe" ó "Mockup"
 
@@ -32,38 +32,38 @@
 - [ ] El código debe estar en **gitHubPages** (emplear gh-pages o configurar github para que se tome a la main como la página a visualizar)
 - [x] Se debe crear al menos una branch por cada desarrollador
 - [ ] Publicar la Web empleando GitHubPages
-- [ ] El repositorio no debe contener archivos innecesarios (no debe contener .idea o .vsc o .DS_Store o node_modules, en todo caso emplear **.gitignore**)
+- [x] El repositorio no debe contener archivos innecesarios (no debe contener .idea o .vsc o .DS_Store o node_modules, en todo caso emplear **.gitignore**)
 - [x] Se debe emplear conventional commits
-- [ ] El historial debe ser consistente y tener al menos 10 commits separados en al menos 4 días
+- [x] El historial debe ser consistente y tener al menos 10 commits separados en al menos 4 días
 
 ## Proyecto general
 - [x] NO está permitido descargar un TEMPLATE (diseño 100% desde cero)
 - [x] La página principal debe llamarse index
 - [x] La estructura del proyecto debe ser adecuada (crear una carpeta para las imágenes, otra para los sketch/mockups).
-- [ ] Identar correctamente el código
+- [x] Identar correctamente el código
 - [ ] No debe haber errores presentes (en Webstorm *Code* > *Inspect Code* para verificar que no haya errores)
-- [ ] Se debe emplear favicon
-- [ ] Emplear alguna fuente de google fonts o subir al proyecto alguna fuente externa (aunque sea para un título)
+- [x] Se debe emplear favicon
+- [x] Emplear alguna fuente de google fonts o subir al proyecto alguna fuente externa (aunque sea para un título)
 - [x] Debe haber navegación entre todas las páginas
 - [ ] No debe haber errores de ortografía en el contenido visual
 - [x] "Lorem ipsum" es sólo válido para los prototipos, NO para la página
-- [ ] No debe existir código comentado
+- [x] No debe existir código comentado
 
 ## Sobre el HTML
 - [x] Todas las etiquetas deben estar en minúscula
-- [ ] Poner comillas a todos los atributos
+- [x] Poner comillas a todos los atributos
 - [x] **Title** debe contener el título de la página
 - [x] En el ```<head></head>``` incluir las etiquetas ```<meta>``` detallando: autor, descripción y palabras clave
-- [] Emplear al menos 3 etiquetas semánticas diferentes
+- [x] Emplear al menos 3 etiquetas semánticas diferentes
 - [x] Emplear ```<header></header>```. En el contenido de la cabecera debe haber un título ```<h1></h1>```, puede tener color de fondo, algún logotipo, etc.
-- [ ] La estructura de la página debe estar definida con ```<div></div>```
+- [X] La estructura de la página debe estar definida con ```<div></div>```
 - [x] Debe contener al menos 3 elementos de tipo ```<input>``` o ```<select>``` o ```<button>``` que le permitan al usuario ingresar valores para poder realizar un cálculo de un ejercicio o seleccionar opciones o llamar a una función.
 - [x] Emplear el atributo **placeholder** (mínimamente en 1 input)
-- [ ] Emplear el atributo **size** para que el tamaño de los inputs sea prolijo
+- [x] Emplear el atributo **size** para que el tamaño de los inputs sea prolijo
 - [x] Emplear el atributo **maxlength** para que el usurario no pueda ingresar valores "muy grandes"
 - [x] No espaciar con excesivos ```<br>```. Utilizar márgenes, paddings, etc.
 - [x] La anidación de etiquetas HTML debe ser correcta.
-- [ ] No utilizar etiquetas deprecadas.
+- [x] No utilizar etiquetas deprecadas.
 - [x] Todas las etiquetas que correspondan deben estar correctamente cerradas
 - [x] Los ids de los elementos deben ser unívocos
 
@@ -71,22 +71,22 @@
 - [x] Debe contener por lo menos una etiqueta ```<img>``` en la página.
 - [x] Todas las imágenes deben ser incluidas en el repositorio dentro de una carpeta llamada **imagenes** (salvo que sean demasiado pesadas. En ese caso, se puede emplear un servidor externo).
 - [x] No se deben subir videos en el repositorio (excepto que sean MUY livianos).
-- [ ] Toda imagen debe tener su atributo alt
-- [ ] Las imágenes deben poseer un nombre representativo 
+- [x] Toda imagen debe tener su atributo alt
+- [x] Las imágenes deben poseer un nombre representativo 
 
 ## Sobre el CSS
-- [ ] El estilo de los elementos debe establecerse en un archivo CSS (prohibido poner el atributo style a los elementos o emplear estilos incrustados).
-- [ ] El CSS debe contar mínimo con un tipo de cada forma (por Tag, por ID y por clase).
-- [ ] Se debe emplear pseudoclase
-- [ ] No emplear ```!important```
-- [ ] El diseño de la página debe ser consistente
-- [ ] Debe existir un único archivo CSS (se debe evitar código duplicado. Se debe aplicar re-utilización de código/estilos)
+- [x] El estilo de los elementos debe establecerse en un archivo CSS (prohibido poner el atributo style a los elementos o emplear estilos incrustados).
+- [x] El CSS debe contar mínimo con un tipo de cada forma (por Tag, por ID y por clase).
+- [x] Se debe emplear pseudoclase
+- [x] No emplear ```!important```
+- [x] El diseño de la página debe ser consistente
+- [x] Debe existir un único archivo CSS (se debe evitar código duplicado. Se debe aplicar re-utilización de código/estilos)
 
 #### Sobre Accesibilidad
-- [ ] Toda imagen debe tener su atributo alt
-- [ ] Todo ```<input>``` o ```<select>``` debe tener su ```<label>```
-- [ ] Los labels deben contener el atributo **for** (el for debe contener el id del input al cual se referencia) 
-- [ ] Si hay una tabla en la página, debe contener ```<caption></caption>```
+- [x] Toda imagen debe tener su atributo alt
+- [x] Todo ```<input>``` o ```<select>``` debe tener su ```<label>```
+- [x] Los labels deben contener el atributo **for** (el for debe contener el id del input al cual se referencia) 
+- [x] Si hay una tabla en la página, debe contener ```<caption></caption>```
 
 #### Sobre la funcionalidad JavaScript
 Se debe agregar funcionalidad Js a la página HTML+CSS desarrollada
