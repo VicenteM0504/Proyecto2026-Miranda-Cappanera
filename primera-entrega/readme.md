@@ -15,7 +15,7 @@ El proyecto **WaveSpots** tiene como objetivo ofrecer spots de surf a surfistas 
 ---
 
 ## Sitio Web
-Podés acceder a la versión publicada en vivo en el siguiente enlace:
+[Podés acceder a la versión publicada en vivo en el siguiente enlace:] (https://vicentem0504.github.io/Proyecto2026-Miranda-Cappanera/primera-entrega/index.html)
 
 ---
 
