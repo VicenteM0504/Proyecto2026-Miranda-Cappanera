@@ -1,11 +1,12 @@
 
-## WaveSpots
+# WaveSpots
 ---
 ## Índice
 - [Descripción del proyecto](#descripción-del-proyecto)
 - [Sitio Web](#sitio-web)
 - [Contenido del proyecto](#contenido-del-proyecto)
 - [Tecnologías y Herramientas](#tecnologías-y-herramientas)
+- [Aclaraciones](#aclaraciones)
 - [Autores](#Autores)
 ---
 
@@ -15,7 +16,7 @@ El proyecto **WaveSpots** tiene como objetivo ofrecer spots de surf a surfistas 
 ---
 
 ## Sitio Web
-[Podés acceder a la versión publicada en vivo en el siguiente enlace:](https://vicentem0504.github.io/Proyecto2026-Miranda-Cappanera/primera-entrega/index.html)
+[Podés acceder a la versión publicada en vivo en este enlace](https://vicentem0504.github.io/Proyecto2026-Miranda-Cappanera/primera-entrega/index.html)
 
 ---
 
@@ -33,7 +34,9 @@ Abajo del mapa, tenemos el apartado de los spots disponibles en relacion de depe
 ---
 
 ## Tecnologias y herramientas
-|figma.com|mockup|
+- figma
+- webstorm
+- cloude
 
 ---
 ## Mockup
@@ -45,9 +48,13 @@ Abajo del mapa, tenemos el apartado de los spots disponibles en relacion de depe
 
 ##  Aclaraciones
 
--Se aclaro en clase con la profe, que como no nos deja descargarlo, se la añade por correo (ademas del link adjunto).
--Se acordo en clase que no hay navegacion entre paginas.
+- Se aclaro en clase con la profe, que como no nos deja descargar el mockup, se la añade por correo (ademas del link adjunto).
+- Se acordo en clase que no hay navegacion entre paginas.
+- Al final del wirframe, se aclara el los mensajes de error posibles para el usuario.
 
 ## Autores
-Vicente Miranda
-Juan Cruz Cappanera
+
+|  Nombre   | Apellido  |
+| --------  | --------- |
+| Vicente   |  Miranda  |
+| Juan Cruz | Cappanera |
