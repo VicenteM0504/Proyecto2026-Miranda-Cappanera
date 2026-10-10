@@ -90,18 +90,18 @@
 
 #### Sobre la funcionalidad JavaScript
 Se debe agregar funcionalidad Js a la página HTML+CSS desarrollada
-- [ ] Una función que compruebe si los valores ingresados son correctos, y si no lo son, que le indique al usuario por un alert o dialog, y que blanquee el contenido del campo.
+- [x] Una función que compruebe si los valores ingresados son correctos, y si no lo son, que le indique al usuario por un alert o dialog, y que blanquee el contenido del campo.
 - [x] Una función que calcule/muestre algo en base a los valores ingresados por el usuario en los inputs.
 - [x] El código Js debe estar en un archivo externo
 - [x] Se debe emplear var, let o const según corresponda para mayor eficiencia
-- [ ] Los event listener deben ser colocados en el HTML
+- [x] Los event listener deben ser colocados en el HTML
 - [x] No deben existir funciones innecesarias que no se llamen en ninguna sección del código
 - [x] Las funciones deben estar escritas cómo **función flecha**
-- [ ] No debe haber errores JavaScript presentes (F12 > Consola)
-- [ ] El funcionamiento de la página debe ser consistente.
+- [x] No debe haber errores JavaScript presentes (F12 > Consola)
+- [x] El funcionamiento de la página debe ser consistente.
 
 ## Sobre la documentación
-- [ ] **TODAS** las funciones javaScript deben estar documentadas como vimos en clase.
+- [x] **TODAS** las funciones javaScript deben estar documentadas como vimos en clase.
 ````javascript
 /**
  * Descripción de que hace la función

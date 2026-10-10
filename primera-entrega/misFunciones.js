@@ -296,6 +296,13 @@ const spots = [
 ];
 
 
+/**
+ * Renderiza e inserta en el DOM las tarjetas de los spots de surf contenidos en la lista ingresada.
+ * @method mostrarTarjetas
+ * @param {array} lista Arreglo de objetos que representa la lista de spots a mostrar.
+ */
+
+
 let mostrarTarjetas = (lista) => {
   let contenedor = document.getElementById("listaSpots");
   contenedor.innerHTML = "";
@@ -342,6 +349,11 @@ let mostrarTarjetas = (lista) => {
 };
 
 
+/**
+ * Filtra la lista de spots según el texto ingresado en el buscador y las opciones seleccionadas en los desplegables de país, nivel, ola y océano.
+ * @method filtrarTarjeta
+ */
+
 let filtrarTarjeta = () => {
   let searchWord = document.getElementById("Busqueda").value;
   let pais = document.getElementById("Pais").value;
@@ -373,9 +385,20 @@ let filtrarTarjeta = () => {
     newLista = newLista.filter((spo) => spo.oceano == oceano);
   }
 
-  mostrarTarjetas(newLista);
+  if (newLista.length === 0) {
+    alert("No se encontraron spots con los criterios ingresados.");
+    mostrarTarjetas(spots);
+  } else {
+    mostrarTarjetas(newLista);
+  }
 };
 
+
+/**
+ * Selecciona un spot desde la interaccion con un boton desde el mapa, y ejecuta el filtrado de tarjetas.
+ * @method mostrarSpot
+ * @param {string} nombreSpot Nombre del lugar seleccionado desde el botón del mapa.
+ */
 
 let mostrarSpot = (nombreSpot) => {
   let newLista = spots.filter(
@@ -383,6 +406,8 @@ let mostrarSpot = (nombreSpot) => {
   );
   mostrarTarjetas(newLista);
 };
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
     mostrarTarjetas(spots);
