@@ -41,11 +41,11 @@
 - [x] La página principal debe llamarse index
 - [x] La estructura del proyecto debe ser adecuada (crear una carpeta para las imágenes, otra para los sketch/mockups).
 - [x] Identar correctamente el código
-- [ ] No debe haber errores presentes (en Webstorm *Code* > *Inspect Code* para verificar que no haya errores)
+- [x] No debe haber errores presentes (en Webstorm *Code* > *Inspect Code* para verificar que no haya errores)
 - [x] Se debe emplear favicon
 - [x] Emplear alguna fuente de google fonts o subir al proyecto alguna fuente externa (aunque sea para un título)
 - [x] Debe haber navegación entre todas las páginas
-- [ ] No debe haber errores de ortografía en el contenido visual
+- [x] No debe haber errores de ortografía en el contenido visual
 - [x] "Lorem ipsum" es sólo válido para los prototipos, NO para la página
 - [x] No debe existir código comentado
 
