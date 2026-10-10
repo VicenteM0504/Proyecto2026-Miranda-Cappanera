@@ -8,8 +8,6 @@ body {
     color: #1a4d4e;
 }
 
-/*HEADER*/
-
 .logo-titulo {
     display: flex;
     justify-content: center;
@@ -117,8 +115,6 @@ body {
 }
 
 
-
-/*MAPA*/
 
 main {
     max-width: 1200px;
@@ -273,8 +269,6 @@ main {
 
 
 
-
-/*FOOTER*/
 
 .tarjeta {
     width: 100%;
