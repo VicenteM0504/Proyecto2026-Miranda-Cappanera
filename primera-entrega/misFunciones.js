@@ -1,8 +1,8 @@
 const spots = [
   {
-    nombre: "Saquearema",
+    nombre: "Saquarema",
     pais: "Brasil",
-    oceano: "Atlantico",
+    oceano: "Atlántico",
     nivel: "Intermedio",
     ola: "Point Break",
     imagen: "imagenes/fotosspots/saquarema.jpg",
@@ -15,8 +15,8 @@ const spots = [
   },
   {
     nombre: "Pipeline",
-    pais: "USA",
-    oceano: "Pacifico",
+    pais: "EE. UU.",
+    oceano: "Pacífico",
     nivel: "Experto",
     ola: "Reef Break",
     imagen: "imagenes/fotosspots/pipeline.jpg",
@@ -29,8 +29,8 @@ const spots = [
   },
   {
     nombre: "Puerto Escondido",
-    pais: "Mexico",
-    oceano: "Pacifico",
+    pais: "México",
+    oceano: "Pacífico",
     nivel: "Experto",
     ola: "Beach Break",
     imagen: "imagenes/fotosspots/puerto escondido.jpg",
@@ -44,7 +44,7 @@ const spots = [
   {
     nombre: "Pavones",
     pais: "Costa Rica",
-    oceano: "Pacifico",
+    oceano: "Pacífico",
     nivel: "Intermedio",
     ola: "Point Break",
     imagen: "imagenes/fotosspots/pavones.jpg",
@@ -58,7 +58,7 @@ const spots = [
   {
     nombre: "Punta Roca",
     pais: "El Salvador",
-    oceano: "Pacifico",
+    oceano: "Pacífico",
     nivel: "Avanzado",
     ola: "Point Break",
     imagen: "imagenes/fotosspots/puntaroca.jpg",
@@ -71,8 +71,8 @@ const spots = [
   },
   {
     nombre: "Chicama",
-    pais: "Peru",
-    oceano: "Pacifico",
+    pais: "Perú",
+    oceano: "Pacífico",
     nivel: "Principiante",
     ola: "Point Break",
     imagen: "imagenes/fotosspots/chicama.jpg",
@@ -86,7 +86,7 @@ const spots = [
   {
     nombre: "Punta de Lobos",
     pais: "Chile",
-    oceano: "Pacifico",
+    oceano: "Pacífico",
     nivel: "Intermedio",
     ola: "Point Break",
     imagen: "imagenes/fotosspots/puntadelobos.jpg",
@@ -100,7 +100,7 @@ const spots = [
   {
     nombre: "Cloud 9",
     pais: "Filipinas",
-    oceano: "Pacifico",
+    oceano: "Pacífico",
     nivel: "Intermedio",
     ola: "Reef Break",
     imagen: "imagenes/fotosspots/cloud9.jpg",
@@ -114,7 +114,7 @@ const spots = [
   {
     nombre: "Arugam Bay",
     pais: "Sri Lanka",
-    oceano: "Pacifico",
+    oceano: "Índico",
     nivel: "Principiante",
     ola: "Point Break",
     imagen: "imagenes/fotosspots/arugambay.jpg",
@@ -127,8 +127,8 @@ const spots = [
   },
   {
     nombre: "Jeffreys Bay",
-    pais: "Sudafrica",
-    oceano: "Indico",
+    pais: "Sudáfrica",
+    oceano: "Índico",
     nivel: "Avanzado",
     ola: "Point Break",
     imagen: "imagenes/fotosspots/Jbay.jpg",
@@ -142,7 +142,7 @@ const spots = [
   {
     nombre: "Nazaré",
     pais: "Portugal",
-    oceano: "Atlantico",
+    oceano: "Atlántico",
     nivel: "Experto",
     ola: "Beach Break",
     imagen: "imagenes/fotosspots/nazare.jpg",
@@ -156,7 +156,7 @@ const spots = [
   {
     nombre: "Hossegor",
     pais: "Francia",
-    oceano: "Atlantico",
+    oceano: "Atlántico",
     nivel: "Avanzado",
     ola: "Beach Break",
     imagen: "imagenes/fotosspots/hossegor.jpg",
@@ -170,7 +170,7 @@ const spots = [
   {
     nombre: "Mundaka",
     pais: "España",
-    oceano: "Mar Cantabrico",
+    oceano: "Mar Cantábrico",
     nivel: "Avanzado",
     ola: "River Mouth",
     imagen: "imagenes/fotosspots/mundaka.jpg",
@@ -184,7 +184,7 @@ const spots = [
   {
     nombre: "Bundoran",
     pais: "Irlanda",
-    oceano: "Atlantico",
+    oceano: "Atlántico",
     nivel: "Intermedio",
     ola: "Reef Break",
     imagen: "imagenes/fotosspots/bundoran.jpg",
@@ -198,7 +198,7 @@ const spots = [
   {
     nombre: "Thurso East",
     pais: "Reino Unido",
-    oceano: "Atlantico",
+    oceano: "Atlántico",
     nivel: "Avanzado",
     ola: "Reef Break",
     imagen: "imagenes/fotosspots/thursoeast.jpg",
@@ -212,7 +212,7 @@ const spots = [
   {
     nombre: "Skeleton Bay",
     pais: "Namibia",
-    oceano: "Atlantico",
+    oceano: "Atlántico",
     nivel: "Experto",
     ola: "Point Break",
     imagen: "imagenes/fotosspots/skeletonbay.jpg",
@@ -226,7 +226,7 @@ const spots = [
   {
     nombre: "Anchor Point",
     pais: "Marruecos",
-    oceano: "Atlantico",
+    oceano: "Atlántico",
     nivel: "Intermedio",
     ola: "Point Break",
     imagen: "imagenes/fotosspots/anchorpoint.jpg",
@@ -240,7 +240,7 @@ const spots = [
   {
     nombre: "Uluwatu",
     pais: "Indonesia",
-    oceano: "Indico",
+    oceano: "Índico",
     nivel: "Avanzado",
     ola: "Reef Break",
     imagen: "imagenes/fotosspots/uluwatu.jpg",
@@ -253,8 +253,8 @@ const spots = [
   },
   {
     nombre: "Cloudbreak",
-    pais: "Fiji",
-    oceano: "Pacifico",
+    pais: "Fiyi",
+    oceano: "Pacífico",
     nivel: "Avanzado",
     ola: "Reef Break",
     imagen: "imagenes/fotosspots/cloudbreak.jpg",
@@ -268,7 +268,7 @@ const spots = [
   {
     nombre: "Snapper Rocks",
     pais: "Australia",
-    oceano: "Pacifico",
+    oceano: "Pacífico",
     nivel: "Intermedio",
     ola: "Point Break",
     imagen: "imagenes/fotosspots/snapperrocks.jpg",
@@ -276,13 +276,13 @@ const spots = [
     clima: "https://www.windguru.cz/476420",
     descripcion: "El inicio del Superbank, creando derechas kilométricas conectadas con miles de oportunidades para tubos y giros.",
     altura: "3-8 ft",
-    temporada: "Dici - Abr",
+    temporada: "Dic - Abr",
     viento: "S/SW Offshore"
   },
   {
     nombre: "Raglan",
     pais: "Nueva Zelanda",
-    oceano: "Pacifico",
+    oceano: "Pacífico",
     nivel: "Intermedio",
     ola: "Point Break",
     imagen: "imagenes/fotosspots/manubay.jpg",
