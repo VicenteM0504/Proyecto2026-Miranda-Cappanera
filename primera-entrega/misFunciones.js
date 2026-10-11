@@ -82,7 +82,7 @@ const spots = [
     ola: "Point Break",
     imagen: "imagenes/fotosspots/chicama.jpg",
     estrellas: "★★★",
-    clima: "",
+    clima: "https://www.windguru.cz/209091",
     descripcion:
       "La ola izquierda más larga del mundo, con secciones perfectamente conectables sobre un fondo de arena y piedra.",
     altura: "3-7 ft",
@@ -97,7 +97,7 @@ const spots = [
     ola: "Point Break",
     imagen: "imagenes/fotosspots/puntadelobos.jpg",
     estrellas: "★★★★★",
-    clima: "https://www.windguru.cz/209091",
+    clima: "https://www.windguru.cz/318755",
     descripcion:
       "Mítica punta flanqueada por morros rocosos que despide izquierdas potentes e intensas en agua fría.",
     altura: "4-15+ ft",
@@ -319,11 +319,11 @@ const spots = [
 /**
  * Renderiza e inserta en el DOM las tarjetas de los spots de surf contenidos en la lista ingresada.
  * @method mostrarTarjetas
- * @param {array} lista Arreglo de objetos que representa la lista de spots a mostrar.
+ * @param {array} lista - Arreglo de objetos que representa la lista de spots a mostrar.
  */
 
-let mostrarTarjetas = (lista) => {
-  let contenedor = document.getElementById("listaSpots");
+const mostrarTarjetas = (lista) => {
+  const contenedor = document.getElementById("listaSpots");
   contenedor.innerHTML = "";
 
   lista.forEach((spo) => {
@@ -373,12 +373,12 @@ let mostrarTarjetas = (lista) => {
  * @method filtrarTarjeta
  */
 
-let filtrarTarjeta = () => {
-  let searchWord = document.getElementById("Busqueda").value;
-  let pais = document.getElementById("Pais").value;
-  let nivel = document.getElementById("Nivel").value;
-  let ola = document.getElementById("Ola").value;
-  let oceano = document.getElementById("Oceano").value;
+const filtrarTarjeta = () => {
+  const searchWord = document.getElementById("Busqueda").value;
+  const pais = document.getElementById("Pais").value;
+  const nivel = document.getElementById("Nivel").value;
+  const ola = document.getElementById("Ola").value;
+  const oceano = document.getElementById("Oceano").value;
 
   let newLista = spots;
 
@@ -406,6 +406,7 @@ let filtrarTarjeta = () => {
 
   if (newLista.length === 0) {
     alert("No se encontraron spots con los criterios ingresados.");
+    document.getElementById("Busqueda").value = "";
     mostrarTarjetas(spots);
   } else {
     mostrarTarjetas(newLista);
@@ -416,11 +417,13 @@ let spotSeleccionado = null;
 
 /**
  * Selecciona un spot desde la interaccion con un boton desde el mapa, y ejecuta el filtrado de tarjetas.
+ * Cumple con la funcion de si se apreta el mismo boton, se elimina el filtro.
+ * Y para los dispositivos de 900 de width o menos hace un scroll automatico hacia las tarjetas.
  * @method mostrarSpot
- * @param {string} nombreSpot Nombre del lugar seleccionado desde el botón del mapa.
+ * @param {string} nombreSpot - Nombre del lugar seleccionado desde el botón del mapa.
  */
 
-let mostrarSpot = (nombreSpot) => {
+const mostrarSpot = (nombreSpot) => {
   if (spotSeleccionado === nombreSpot) {
     spotSeleccionado = null;
     document.getElementById("Busqueda").value = "";
@@ -444,7 +447,3 @@ let mostrarSpot = (nombreSpot) => {
       .scrollIntoView({ behavior: "smooth", block: "start" });
   }
 };
-
-document.addEventListener("DOMContentLoaded", () => {
-  mostrarTarjetas(spots);
-});
