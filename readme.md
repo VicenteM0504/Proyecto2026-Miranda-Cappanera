@@ -2,12 +2,13 @@
 # WaveSpots
 ---
 ## Índice
-- [Descripción del proyecto](#descripción-del-proyecto)
+- [Descripcion del proyecto](#descripcion-del-proyecto)
 - [Sitio Web](#sitio-web)
 - [Contenido del proyecto](#contenido-del-proyecto)
-- [Tecnologías y Herramientas](#tecnologías-y-herramientas)
+- [Tecnologías y Herramientas](#tecnologias-y-herramientas)
+- [Mockup](#mockup)
 - [Aclaraciones](#aclaraciones)
-- [Autores](#Autores)
+- [Autores](#autores)
 ---
 
 ## Descripcion del proyecto
@@ -34,9 +35,14 @@ Abajo del mapa, tenemos el apartado de los spots disponibles en relacion de depe
 ---
 
 ## Tecnologias y herramientas
-- figma
-- webstorm
-- cloude
+- Figma
+- Webstorm
+- Cloude
+- HTML
+- CSS
+- JavaScript
+- Google Fonts
+- GitHub
 
 ---
 ## Mockup
@@ -52,7 +58,7 @@ Abajo del mapa, tenemos el apartado de los spots disponibles en relacion de depe
 - Se acordo en clase que no hay navegacion entre paginas.
 - Al final del wirframe, se aclara el los mensajes de error posibles para el usuario.
 
-## Autores
+### Autores
 
 |  Nombre   | Apellido  |
 | --------  | --------- |
