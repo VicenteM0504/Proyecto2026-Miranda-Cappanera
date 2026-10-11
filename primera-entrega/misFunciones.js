@@ -8,10 +8,11 @@ const spots = [
     imagen: "imagenes/fotosspots/saquarema.jpg",
     estrellas: "★★★★",
     clima: "https://www.windguru.cz/74458",
-    descripcion: "La capital del surf en Brasil, con olas potentes e intensas que se sostienen muy bien con swells fuertes.",
+    descripcion:
+      "La capital del surf en Brasil, con olas potentes e intensas que se sostienen muy bien con swells fuertes.",
     altura: "3-10 ft",
     temporada: "May - Sep",
-    viento: "NE Offshore"
+    viento: "NE Offshore",
   },
   {
     nombre: "Pipeline",
@@ -22,10 +23,11 @@ const spots = [
     imagen: "imagenes/fotosspots/pipeline.jpg",
     estrellas: "★★★★★",
     clima: "https://www.windguru.cz/53",
-    descripcion: "Icónica ola pesada y tubular que rompe sobre un arrecife de coral somero y cavernoso.",
+    descripcion:
+      "Icónica ola pesada y tubular que rompe sobre un arrecife de coral somero y cavernoso.",
     altura: "6-20+ ft",
     temporada: "Nov - Mar",
-    viento: "E/SE Offshore"
+    viento: "E/SE Offshore",
   },
   {
     nombre: "Puerto Escondido",
@@ -36,10 +38,11 @@ const spots = [
     imagen: "imagenes/fotosspots/puerto escondido.jpg",
     estrellas: "★★★★★",
     clima: "https://www.windguru.cz/156673",
-    descripcion: "El \"Pipeline Mexicano\", potente beach break con tubos masivos y orilleros pesados sobre fondo de arena.",
+    descripcion:
+      'El "Pipeline Mexicano", potente beach break con tubos masivos y orilleros pesados sobre fondo de arena.',
     altura: "6-20+ ft",
     temporada: "May - Oct",
-    viento: "NE Offshore"
+    viento: "NE Offshore",
   },
   {
     nombre: "Pavones",
@@ -50,10 +53,11 @@ const spots = [
     imagen: "imagenes/fotosspots/pavones.jpg",
     estrellas: "★★★★",
     clima: "https://www.windguru.cz/25161",
-    descripcion: "Una de las izquierdas más largas del mundo, capaz de regalar recorridos de más de 1 kilómetro en días épicos.",
+    descripcion:
+      "Una de las izquierdas más largas del mundo, capaz de regalar recorridos de más de 1 kilómetro en días épicos.",
     altura: "3-8 ft",
     temporada: "May - Sep",
-    viento: "NE Offshore"
+    viento: "NE Offshore",
   },
   {
     nombre: "Punta Roca",
@@ -64,10 +68,11 @@ const spots = [
     imagen: "imagenes/fotosspots/puntaroca.jpg",
     estrellas: "★★★★★",
     clima: "https://www.windguru.cz/26388",
-    descripcion: "Considerada la mejor derecha de Centroamérica, muy veloz, hueca y técnica sobre cantos rodados.",
+    descripcion:
+      "Considerada la mejor derecha de Centroamérica, muy veloz, hueca y técnica sobre cantos rodados.",
     altura: "4-10 ft",
     temporada: "Mar - Oct",
-    viento: "N/NE Offshore"
+    viento: "N/NE Offshore",
   },
   {
     nombre: "Chicama",
@@ -78,10 +83,11 @@ const spots = [
     imagen: "imagenes/fotosspots/chicama.jpg",
     estrellas: "★★★",
     clima: "",
-    descripcion: "La ola izquierda más larga del mundo, con secciones perfectamente conectables sobre un fondo de arena y piedra.",
+    descripcion:
+      "La ola izquierda más larga del mundo, con secciones perfectamente conectables sobre un fondo de arena y piedra.",
     altura: "3-7 ft",
     temporada: "Mar - Nov",
-    viento: "SE Offshore"
+    viento: "SE Offshore",
   },
   {
     nombre: "Punta de Lobos",
@@ -92,10 +98,11 @@ const spots = [
     imagen: "imagenes/fotosspots/puntadelobos.jpg",
     estrellas: "★★★★★",
     clima: "https://www.windguru.cz/209091",
-    descripcion: "Mítica punta flanqueada por morros rocosos que despide izquierdas potentes e intensas en agua fría.",
+    descripcion:
+      "Mítica punta flanqueada por morros rocosos que despide izquierdas potentes e intensas en agua fría.",
     altura: "4-15+ ft",
     temporada: "Mar - Oct",
-    viento: "SE Offshore"
+    viento: "SE Offshore",
   },
   {
     nombre: "Cloud 9",
@@ -106,10 +113,11 @@ const spots = [
     imagen: "imagenes/fotosspots/cloud9.jpg",
     estrellas: "★★★★★",
     clima: "https://www.windguru.cz/544537",
-    descripcion: "Ola insignia de Filipinas; una derecha tubular corta, intensa y muy fotogénica sobre arrecife coralino somero.",
+    descripcion:
+      "Ola insignia de Filipinas; una derecha tubular corta, intensa y muy fotogénica sobre arrecife coralino somero.",
     altura: "3-8 ft",
     temporada: "Sep - Nov",
-    viento: "SW Offshore"
+    viento: "SW Offshore",
   },
   {
     nombre: "Arugam Bay",
@@ -120,10 +128,11 @@ const spots = [
     imagen: "imagenes/fotosspots/arugambay.jpg",
     estrellas: "★★★★",
     clima: "https://www.windguru.cz/96362",
-    descripcion: "Meca del surf en Sri Lanka con derechas amigables, secciones fluidas y un ambiente tropical descontracturado.",
+    descripcion:
+      "Meca del surf en Sri Lanka con derechas amigables, secciones fluidas y un ambiente tropical descontracturado.",
     altura: "2-6 ft",
     temporada: "May - Sep",
-    viento: "SW Offshore"
+    viento: "SW Offshore",
   },
   {
     nombre: "Jeffreys Bay",
@@ -134,10 +143,11 @@ const spots = [
     imagen: "imagenes/fotosspots/Jbay.jpg",
     estrellas: "★★★★★",
     clima: "https://www.windguru.cz/68531",
-    descripcion: "Una de las mejores olas de derecha del mundo, famosa por sus secciones veloces y tubulares.",
+    descripcion:
+      "Una de las mejores olas de derecha del mundo, famosa por sus secciones veloces y tubulares.",
     altura: "4-10 ft",
     temporada: "Jun - Ago",
-    viento: "SW Offshore"
+    viento: "SW Offshore",
   },
   {
     nombre: "Nazaré",
@@ -148,10 +158,11 @@ const spots = [
     imagen: "imagenes/fotosspots/nazare.jpg",
     estrellas: "★★★★★",
     clima: "https://www.windguru.cz/75856",
-    descripcion: "Epicentro mundial de olas gigantes, alimentado por un cañón submarino que crea paredes verdaderamente colosales.",
+    descripcion:
+      "Epicentro mundial de olas gigantes, alimentado por un cañón submarino que crea paredes verdaderamente colosales.",
     altura: "15-80+ ft",
     temporada: "Oct - Mar",
-    viento: "E/SE Offshore"
+    viento: "E/SE Offshore",
   },
   {
     nombre: "Hossegor",
@@ -162,10 +173,11 @@ const spots = [
     imagen: "imagenes/fotosspots/hossegor.jpg",
     estrellas: "★★★★★",
     clima: "https://www.windguru.cz/309513",
-    descripcion: "Meca del surf europeo con bancos de arena únicos que generan tubos pesados y explosivos cerca de la orilla.",
+    descripcion:
+      "Meca del surf europeo con bancos de arena únicos que generan tubos pesados y explosivos cerca de la orilla.",
     altura: "4-10 ft",
     temporada: "Sep - Nov",
-    viento: "E Offshore"
+    viento: "E Offshore",
   },
   {
     nombre: "Mundaka",
@@ -176,10 +188,11 @@ const spots = [
     imagen: "imagenes/fotosspots/mundaka.jpg",
     estrellas: "★★★★★",
     clima: "https://www.windguru.cz/3650",
-    descripcion: "Considerada la mejor izquierda de Europa, una ola tubular legendaria creada por la ría de Urdaibai.",
+    descripcion:
+      "Considerada la mejor izquierda de Europa, una ola tubular legendaria creada por la ría de Urdaibai.",
     altura: "4-12 ft",
     temporada: "Sep - Mar",
-    viento: "S/SW Offshore"
+    viento: "S/SW Offshore",
   },
   {
     nombre: "Bundoran",
@@ -190,10 +203,11 @@ const spots = [
     imagen: "imagenes/fotosspots/bundoran.jpg",
     estrellas: "★★★★",
     clima: "https://www.windguru.cz/103244",
-    descripcion: "Capital del surf irlandés, destacando por The Peak, un arrecife de losa plana con izquierdas y derechas muy tubulares.",
+    descripcion:
+      "Capital del surf irlandés, destacando por The Peak, un arrecife de losa plana con izquierdas y derechas muy tubulares.",
     altura: "3-10 ft",
     temporada: "Sep - Mar",
-    viento: "E/SE Offshore"
+    viento: "E/SE Offshore",
   },
   {
     nombre: "Thurso East",
@@ -204,10 +218,11 @@ const spots = [
     imagen: "imagenes/fotosspots/thursoeast.jpg",
     estrellas: "★★★★",
     clima: "https://www.windguru.cz/4160",
-    descripcion: "Derecha escocesa de clase mundial que rompe sobre una losa caliza plana en latitudes árticas.",
+    descripcion:
+      "Derecha escocesa de clase mundial que rompe sobre una losa caliza plana en latitudes árticas.",
     altura: "4-10 ft",
     temporada: "Oct - Mar",
-    viento: "S/SW Offshore"
+    viento: "S/SW Offshore",
   },
   {
     nombre: "Skeleton Bay",
@@ -218,10 +233,11 @@ const spots = [
     imagen: "imagenes/fotosspots/skeletonbay.jpg",
     estrellas: "★★★★★",
     clima: "https://www.windguru.cz/208269",
-    descripcion: "La izquierda de arena más larga y tubular del planeta, capaz de ofrecer tubos de más de 30 segundos en el desierto.",
+    descripcion:
+      "La izquierda de arena más larga y tubular del planeta, capaz de ofrecer tubos de más de 30 segundos en el desierto.",
     altura: "4-10 ft",
     temporada: "May - Sep",
-    viento: "S Offshore"
+    viento: "S Offshore",
   },
   {
     nombre: "Anchor Point",
@@ -232,10 +248,11 @@ const spots = [
     imagen: "imagenes/fotosspots/anchorpoint.jpg",
     estrellas: "★★★★",
     clima: "https://www.windguru.cz/409927",
-    descripcion: "La derecha emblemática de Marruecos con secciones largas sobre plataformas rocosas y paredes limpias.",
+    descripcion:
+      "La derecha emblemática de Marruecos con secciones largas sobre plataformas rocosas y paredes limpias.",
     altura: "4-10 ft",
     temporada: "Nov - Mar",
-    viento: "E/NE Offshore"
+    viento: "E/NE Offshore",
   },
   {
     nombre: "Uluwatu",
@@ -246,10 +263,11 @@ const spots = [
     imagen: "imagenes/fotosspots/uluwatu.jpg",
     estrellas: "★★★★★",
     clima: "https://www.windguru.cz/1281402",
-    descripcion: "Templo sagrado del surf balinés con múltiples picos de izquierda sobre arrecife.",
+    descripcion:
+      "Templo sagrado del surf balinés con múltiples picos de izquierda sobre arrecife.",
     altura: "3-12 ft",
     temporada: "May - Sep",
-    viento: "SE Offshore"
+    viento: "SE Offshore",
   },
   {
     nombre: "Cloudbreak",
@@ -260,10 +278,11 @@ const spots = [
     imagen: "imagenes/fotosspots/cloudbreak.jpg",
     estrellas: "★★★★★",
     clima: "https://www.windguru.cz/208779",
-    descripcion: "Impresionante izquierda de mar abierto que aguanta cualquier tamaño con tubos masivos e intensos sobre coral.",
+    descripcion:
+      "Impresionante izquierda de mar abierto que aguanta cualquier tamaño con tubos masivos e intensos sobre coral.",
     altura: "4-20+ ft",
     temporada: "Abr - Oct",
-    viento: "E/SE Offshore"
+    viento: "E/SE Offshore",
   },
   {
     nombre: "Snapper Rocks",
@@ -274,10 +293,11 @@ const spots = [
     imagen: "imagenes/fotosspots/snapperrocks.jpg",
     estrellas: "★★★★★",
     clima: "https://www.windguru.cz/476420",
-    descripcion: "El inicio del Superbank, creando derechas kilométricas conectadas con miles de oportunidades para tubos y giros.",
+    descripcion:
+      "El inicio del Superbank, creando derechas kilométricas conectadas con miles de oportunidades para tubos y giros.",
     altura: "3-8 ft",
     temporada: "Dic - Abr",
-    viento: "S/SW Offshore"
+    viento: "S/SW Offshore",
   },
   {
     nombre: "Raglan",
@@ -288,20 +308,19 @@ const spots = [
     imagen: "imagenes/fotosspots/manubay.jpg",
     estrellas: "★★★★",
     clima: "https://www.windguru.cz/25736",
-    descripcion: "Famosa izquierda sobre cantos de roca volcánica negra con tramos kilométricos e ideal ritmo para carving.",
+    descripcion:
+      "Famosa izquierda sobre cantos de roca volcánica negra con tramos kilométricos e ideal ritmo para carving.",
     altura: "3-8 ft",
     temporada: "Mar - Oct",
-    viento: "S/SW Offshore"
-  }
+    viento: "S/SW Offshore",
+  },
 ];
-
 
 /**
  * Renderiza e inserta en el DOM las tarjetas de los spots de surf contenidos en la lista ingresada.
  * @method mostrarTarjetas
  * @param {array} lista Arreglo de objetos que representa la lista de spots a mostrar.
  */
-
 
 let mostrarTarjetas = (lista) => {
   let contenedor = document.getElementById("listaSpots");
@@ -310,7 +329,8 @@ let mostrarTarjetas = (lista) => {
   lista.forEach((spo) => {
     contenedor.innerHTML += `
       <div class="tarjeta">
-        <div class="imagen-tarjeta" style="background-image: url('${spo.imagen}')">
+        <div class="imagen-tarjeta">
+          <img src="${spo.imagen}" alt="Foto spot ${spo.nombre}" class="foto-spot" />
           <span class="Nivel2">${spo.nivel}</span>
           <div class="estrellas">${spo.estrellas}</div>
         </div>
@@ -348,7 +368,6 @@ let mostrarTarjetas = (lista) => {
   });
 };
 
-
 /**
  * Filtra la lista de spots según el texto ingresado en el buscador y las opciones seleccionadas en los desplegables de país, nivel, ola y océano.
  * @method filtrarTarjeta
@@ -365,7 +384,7 @@ let filtrarTarjeta = () => {
 
   if (searchWord) {
     newLista = newLista.filter((spo) =>
-      spo.nombre.toLowerCase().includes(searchWord.toLowerCase())
+      spo.nombre.toLowerCase().includes(searchWord.toLowerCase()),
     );
   }
 
@@ -393,12 +412,7 @@ let filtrarTarjeta = () => {
   }
 };
 
-
-
-
-
 let spotSeleccionado = null;
-
 
 /**
  * Selecciona un spot desde la interaccion con un boton desde el mapa, y ejecuta el filtrado de tarjetas.
@@ -420,17 +434,17 @@ let mostrarSpot = (nombreSpot) => {
 
   spotSeleccionado = nombreSpot;
   let newLista = spots.filter(
-    (spo) => spo.nombre.toLowerCase() == nombreSpot.toLowerCase()
+    (spo) => spo.nombre.toLowerCase() == nombreSpot.toLowerCase(),
   );
   mostrarTarjetas(newLista);
 
   if (window.innerWidth <= 900) {
-    document.getElementById("listaSpots").scrollIntoView({ behavior: "smooth", block: "start" });
+    document
+      .getElementById("listaSpots")
+      .scrollIntoView({ behavior: "smooth", block: "start" });
   }
 };
 
-
-
 document.addEventListener("DOMContentLoaded", () => {
-    mostrarTarjetas(spots);
+  mostrarTarjetas(spots);
 });
