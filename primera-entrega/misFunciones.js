@@ -380,7 +380,7 @@ const filtrarTarjeta = () => {
   const ola = document.getElementById("Ola").value;
   const oceano = document.getElementById("Oceano").value;
 
-  let newLista = spots;
+  const newLista = spots;
 
   if (searchWord) {
     newLista = newLista.filter((spo) =>
