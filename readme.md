@@ -12,7 +12,7 @@
 ---
 
 ## Descripcion del proyecto
-El proyecto **WaveSpots** tiene como objetivo ofrecer spots de surf a surfistas o nuevos surfistas. Como autores del proyecto, les damos la posibilidad de buscar spots de surf mediante filtros como busqueda por pais, nivel, ciudad, oceano/mar y tipo de ola. Asi dandole una busqueda efficiente al surfista. 
+El proyecto **WaveSpots** tiene como objetivo ofrecer spots de surf a surfistas o nuevos surfistas. Como autores del proyecto, les damos la posibilidad de buscar spots de surf mediante filtros como busqueda por pais, nivel, ciudad, oceano/mar y tipo de ola. Asi dandole una busqueda eficiente al surfista. 
 
 ---
 
@@ -22,7 +22,7 @@ El proyecto **WaveSpots** tiene como objetivo ofrecer spots de surf a surfistas 
 ---
 
 ## Contenido del proyecto
-La web contiene principalmente una busqueda por filtros(**pais, nivel, ciudad, oceano/mar y tipo de ola**) o sino el usuario puede hacer una busqueda normal. Abajo de los filtros les mostramos radar de spots ubicados en mapa del mundo. El en mapa, arriba a la izquierda aparece un cartel que indica los spots activos que se van actualizando en dependencia de los filtros. Sobre el mismo mapa hay puntos que nos permiten filtrar los mismos spots.
+La web contiene principalmente una busqueda por filtros(**pais, nivel, ciudad, oceano/mar y tipo de ola**), o sino el usuario puede hacer una busqueda normal. Abajo de los filtros les mostramos radar de spots ubicados en mapa del mundo. Sobre el mismo mapa hay puntos que nos permiten filtrar los mismos spots. Y debajo del todo se encuentran los spots en forma de tarjetas.
 
 ---
 
@@ -37,7 +37,7 @@ Abajo del mapa, tenemos el apartado de los spots disponibles en relacion de depe
 ## Tecnologias y herramientas
 - Figma
 - Webstorm
-- Cloude
+- Claude
 - HTML
 - CSS
 - JavaScript
@@ -54,9 +54,9 @@ Abajo del mapa, tenemos el apartado de los spots disponibles en relacion de depe
 
 ##  Aclaraciones
 
-- Se aclaro en clase con la profe, que como no nos deja descargar el mockup, se la añade por correo (ademas del link adjunto).
+- Se aclaro en clase con la profe, que como no nos deja descargar el mockup, se lo añade por correo (ademas del link adjunto).
 - Se acordo en clase que no hay navegacion entre paginas.
-- Al final del wirframe, se aclara el los mensajes de error posibles para el usuario.
+- Al final del wirframe, se aclaran los mensajes de error posibles para el usuario.
 
 ### Autores
 
