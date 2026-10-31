@@ -322,7 +322,7 @@ const spots = [
  * @param {array} lista - Arreglo de objetos que representa la lista de spots a mostrar.
  */
 
-let mostrarTarjetas = (lista) => {
+const mostrarTarjetas = (lista) => {
   const contenedor = document.getElementById("listaSpots");
   contenedor.innerHTML = "";
 
@@ -373,14 +373,14 @@ let mostrarTarjetas = (lista) => {
  * @method filtrarTarjeta
  */
 
-let filtrarTarjeta = () => {
+const filtrarTarjeta = () => {
   const searchWord = document.getElementById("Busqueda").value;
   const pais = document.getElementById("Pais").value;
   const nivel = document.getElementById("Nivel").value;
   const ola = document.getElementById("Ola").value;
   const oceano = document.getElementById("Oceano").value;
 
-  const newLista = spots;
+  let newLista = spots;
 
   if (searchWord) {
     newLista = newLista.filter((spo) =>
@@ -423,7 +423,7 @@ let spotSeleccionado = null;
  * @param {string} nombreSpot - Nombre del lugar seleccionado desde el botón del mapa.
  */
 
-let mostrarSpot = (nombreSpot) => {
+const mostrarSpot = (nombreSpot) => {
   if (spotSeleccionado === nombreSpot) {
     spotSeleccionado = null;
     document.getElementById("Busqueda").value = "";
