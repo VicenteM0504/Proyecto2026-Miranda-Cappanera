@@ -108,9 +108,26 @@ body {
   transition: all 0.2s ease;
 }
 
+.btn-limpiar {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #bbf0ee;
+  border: 1px solid #9de3e0;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #1a4d4e;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-limpiar:hover {
+  background-color: #9de3e0;
+}
+
 main {
   max-width: 1200px;
-  margin: 20px auto;
+  margin: 20px auto 30px;
   padding: 0 20px;
 }
 
@@ -378,12 +395,6 @@ main {
   font-size: 14px;
 }
 
-footer {
-  max-width: 1200px;
-  margin: 0 auto 30px;
-  padding: 0 20px;
-}
-
 #listaSpots {
   scroll-margin-top: 12px;
   display: grid;
@@ -411,8 +422,7 @@ footer {
     padding: 20px 16px;
   }
 
-  main,
-  footer {
+  main {
     padding: 0 16px;
   }
 
