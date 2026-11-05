@@ -125,6 +125,10 @@
           </div>
         </div>
       </section>
+
+      <button type="button" class="btn-limpiar" onclick="resetearFiltros()">
+        Limpiar filtros
+      </button>
     </header>
 
     <main>
@@ -132,57 +136,96 @@
         <div class="mapa-inner">
           <img src="imagenes/mapamundi.jpg" alt="Mapa mundial" class="mapa" />
 
-          <button class="punto saquearema" onclick="mostrarSpot('Saquarema')">
-            ●
-          </button>
-
-          <button class="punto pipeline" onclick="mostrarSpot('Pipeline')">
+          <button
+            type="button"
+            class="punto saquearema"
+            onclick="mostrarSpot('Saquarema')"
+          >
             ●
           </button>
 
           <button
+            type="button"
+            class="punto pipeline"
+            onclick="mostrarSpot('Pipeline')"
+          >
+            ●
+          </button>
+
+          <button
+            type="button"
             class="punto puerto-escondido"
             onclick="mostrarSpot('Puerto Escondido')"
           >
             ●
           </button>
 
-          <button class="punto pavones" onclick="mostrarSpot('Pavones')">
-            ●
-          </button>
-
-          <button class="punto punta-roca" onclick="mostrarSpot('Punta Roca')">
-            ●
-          </button>
-
-          <button class="punto chicama" onclick="mostrarSpot('Chicama')">
+          <button
+            type="button"
+            class="punto pavones"
+            onclick="mostrarSpot('Pavones')"
+          >
             ●
           </button>
 
           <button
+            type="button"
+            class="punto punta-roca"
+            onclick="mostrarSpot('Punta Roca')"
+          >
+            ●
+          </button>
+
+          <button
+            type="button"
+            class="punto chicama"
+            onclick="mostrarSpot('Chicama')"
+          >
+            ●
+          </button>
+
+          <button
+            type="button"
             class="punto punta-de-lobos"
             onclick="mostrarSpot('Punta de Lobos')"
           >
             ●
           </button>
 
-          <button class="punto nazare" onclick="mostrarSpot('Nazaré')">
-            ●
-          </button>
-
-          <button class="punto hossegor" onclick="mostrarSpot('Hossegor')">
-            ●
-          </button>
-
-          <button class="punto mundaka" onclick="mostrarSpot('Mundaka')">
-            ●
-          </button>
-
-          <button class="punto bundoran" onclick="mostrarSpot('Bundoran')">
+          <button
+            type="button"
+            class="punto nazare"
+            onclick="mostrarSpot('Nazaré')"
+          >
             ●
           </button>
 
           <button
+            type="button"
+            class="punto hossegor"
+            onclick="mostrarSpot('Hossegor')"
+          >
+            ●
+          </button>
+
+          <button
+            type="button"
+            class="punto mundaka"
+            onclick="mostrarSpot('Mundaka')"
+          >
+            ●
+          </button>
+
+          <button
+            type="button"
+            class="punto bundoran"
+            onclick="mostrarSpot('Bundoran')"
+          >
+            ●
+          </button>
+
+          <button
+            type="button"
             class="punto thurso-east"
             onclick="mostrarSpot('Thurso East')"
           >
@@ -190,6 +233,7 @@
           </button>
 
           <button
+            type="button"
             class="punto jeffreys-bay"
             onclick="mostrarSpot('Jeffreys Bay')"
           >
@@ -197,6 +241,7 @@
           </button>
 
           <button
+            type="button"
             class="punto skeleton-bay"
             onclick="mostrarSpot('Skeleton Bay')"
           >
@@ -204,44 +249,64 @@
           </button>
 
           <button
+            type="button"
             class="punto anchor-point"
             onclick="mostrarSpot('Anchor Point')"
           >
             ●
           </button>
 
-          <button class="punto uluwatu" onclick="mostrarSpot('Uluwatu')">
-            ●
-          </button>
-
-          <button class="punto cloudbreak" onclick="mostrarSpot('Cloudbreak')">
+          <button
+            type="button"
+            class="punto uluwatu"
+            onclick="mostrarSpot('Uluwatu')"
+          >
             ●
           </button>
 
           <button
+            type="button"
+            class="punto cloudbreak"
+            onclick="mostrarSpot('Cloudbreak')"
+          >
+            ●
+          </button>
+
+          <button
+            type="button"
             class="punto snapper-rocks"
             onclick="mostrarSpot('Snapper Rocks')"
           >
             ●
           </button>
 
-          <button class="punto raglan" onclick="mostrarSpot('Raglan')">
+          <button
+            type="button"
+            class="punto raglan"
+            onclick="mostrarSpot('Raglan')"
+          >
             ●
           </button>
 
-          <button class="punto arugam-bay" onclick="mostrarSpot('Arugam Bay')">
+          <button
+            type="button"
+            class="punto arugam-bay"
+            onclick="mostrarSpot('Arugam Bay')"
+          >
             ●
           </button>
 
-          <button class="punto cloud-9" onclick="mostrarSpot('Cloud 9')">
+          <button
+            type="button"
+            class="punto cloud-9"
+            onclick="mostrarSpot('Cloud 9')"
+          >
             ●
           </button>
         </div>
       </div>
-    </main>
 
-    <footer>
       <div id="listaSpots"></div>
-    </footer>
+    </main>
   </body>
 </html>

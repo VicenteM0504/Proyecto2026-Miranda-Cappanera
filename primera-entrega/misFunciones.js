@@ -374,7 +374,7 @@ const mostrarTarjetas = (lista) => {
  */
 
 const filtrarTarjeta = () => {
-  const searchWord = document.getElementById("Busqueda").value;
+  const searchWord = document.getElementById("Busqueda").value.trim();
   const pais = document.getElementById("Pais").value;
   const nivel = document.getElementById("Nivel").value;
   const ola = document.getElementById("Ola").value;
@@ -389,19 +389,19 @@ const filtrarTarjeta = () => {
   }
 
   if (pais) {
-    newLista = newLista.filter((spo) => spo.pais == pais);
+    newLista = newLista.filter((spo) => spo.pais === pais);
   }
 
   if (nivel) {
-    newLista = newLista.filter((spo) => spo.nivel == nivel);
+    newLista = newLista.filter((spo) => spo.nivel === nivel);
   }
 
   if (ola) {
-    newLista = newLista.filter((spo) => spo.ola == ola);
+    newLista = newLista.filter((spo) => spo.ola === ola);
   }
 
   if (oceano) {
-    newLista = newLista.filter((spo) => spo.oceano == oceano);
+    newLista = newLista.filter((spo) => spo.oceano === oceano);
   }
 
   if (newLista.length === 0) {
@@ -411,6 +411,21 @@ const filtrarTarjeta = () => {
   } else {
     mostrarTarjetas(newLista);
   }
+};
+
+/**
+ * Blanquea el buscador y los filtros desplegables, quita la selección del mapa y vuelve a mostrar la lista completa de spots.
+ * @method resetearFiltros
+ */
+
+const resetearFiltros = () => {
+  spotSeleccionado = null;
+  document.getElementById("Busqueda").value = "";
+  document.getElementById("Pais").value = "";
+  document.getElementById("Nivel").value = "";
+  document.getElementById("Ola").value = "";
+  document.getElementById("Oceano").value = "";
+  mostrarTarjetas(spots);
 };
 
 let spotSeleccionado = null;
@@ -436,8 +451,8 @@ const mostrarSpot = (nombreSpot) => {
   }
 
   spotSeleccionado = nombreSpot;
-  let newLista = spots.filter(
-    (spo) => spo.nombre.toLowerCase() == nombreSpot.toLowerCase(),
+  const newLista = spots.filter(
+    (spo) => spo.nombre.toLowerCase() === nombreSpot.toLowerCase(),
   );
   mostrarTarjetas(newLista);
 
