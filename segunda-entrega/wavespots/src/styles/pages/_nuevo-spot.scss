@@ -1,0 +1,27 @@
+@use "../abstracts/mixins" as *;
+
+.pagina {
+  h2 {
+    margin-top: 0;
+  }
+}
+
+.formulario {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+
+  @include responsive("mobile") {
+    grid-template-columns: 1fr;
+  }
+
+  .mensaje-estado,
+  .formulario-acciones {
+    grid-column: 1 / -1;
+  }
+}
+
+.formulario-acciones {
+  @include flex-center(row, 12px);
+  justify-content: flex-start;
+}

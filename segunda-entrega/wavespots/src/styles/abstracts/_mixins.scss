@@ -1,0 +1,74 @@
+@use "sass:map";
+@use "variables" as *;
+
+// Centra el contenido con flex. Ej: @include flex-center(row, 20px);
+@mixin flex-center($direccion: row, $gap: 0) {
+  display: flex;
+  flex-direction: $direccion;
+  align-items: center;
+  justify-content: center;
+  gap: $gap;
+}
+
+// Media query según el nombre del breakpoint. Ej: @include responsive("mobile") { ... }
+@mixin responsive($nombre) {
+  @media (max-width: map.get($breakpoints, $nombre)) {
+    @content;
+  }
+}
+
+// Contenedor centrado con ancho máximo y márgenes laterales.
+@mixin contenedor($padding-vertical: 0) {
+  max-width: $ancho-maximo;
+  margin: 0 auto;
+  padding: $padding-vertical 20px;
+
+  @include responsive("mobile") {
+    padding: $padding-vertical 16px;
+  }
+}
+
+// Estilo común de inputs y selects.
+@mixin control($radio: $radio-chico) {
+  width: 100%;
+  padding: 10px 12px;
+  background-color: $color-superficie;
+  border: 1px solid $color-borde;
+  border-radius: $radio;
+  font-size: 14px;
+  font-weight: 500;
+  color: $color-texto;
+  transition: all 0.2s ease;
+}
+
+// Sombra suave para el mapa y las tarjetas.
+@mixin sombra-suave {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+// Base de todos los botones; cada variante cambia los colores.
+@mixin boton($fondo, $texto, $fondo-hover, $borde: $fondo) {
+  padding: 10px 20px;
+  background-color: $fondo;
+  color: $texto;
+  border: 1px solid $borde;
+  border-radius: $radio-chico;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover:not(:disabled) {
+    background-color: $fondo-hover;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  &:focus-visible {
+    outline: 3px solid $color-acento;
+    outline-offset: 2px;
+  }
+}
