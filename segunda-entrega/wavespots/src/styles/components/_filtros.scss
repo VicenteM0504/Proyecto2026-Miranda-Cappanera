@@ -1,0 +1,27 @@
+@use "../abstracts/mixins" as *;
+
+.filtros {
+  margin-bottom: 20px;
+
+  > .campo {
+    margin-bottom: 20px;
+  }
+
+  .btn {
+    margin-top: 15px;
+  }
+}
+
+.filters-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+
+  @include responsive("tablet") {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include responsive("mobile") {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,100 @@
+@use "sass:map";
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+// Posición de cada punto del mapa. La clave es el campo "punto" de db.json.
+$puntos: (
+  "saquarema": (top: 76%, left: 36%),
+  "pipeline": (top: 50%, left: 4%),
+  "puerto-escondido": (top: 52%, left: 19%),
+  "pavones": (top: 56%, left: 23%),
+  "punta-roca": (top: 53%, left: 21%),
+  "chicama": (top: 67%, left: 25%),
+  "punta-de-lobos": (top: 80%, left: 27.5%),
+  "nazare": (top: 37%, left: 44.5%),
+  "hossegor": (top: 33%, left: 46.5%),
+  "mundaka": (top: 35%, left: 45.7%),
+  "bundoran": (top: 27%, left: 45%),
+  "thurso-east": (top: 25%, left: 46.7%),
+  "jeffreys-bay": (top: 83.5%, left: 54.5%),
+  "skeleton-bay": (top: 76%, left: 51%),
+  "anchor-point": (top: 44%, left: 44.5%),
+  "uluwatu": (top: 68%, left: 77.5%),
+  "cloudbreak": (top: 74%, left: 97%),
+  "snapper-rocks": (top: 83%, left: 89.4%),
+  "raglan": (top: 88%, left: 95%),
+  "arugam-bay": (top: 59.3%, left: 70%),
+  "cloud-9": (top: 55%, left: 82%),
+);
+
+.mapa-container {
+  position: relative;
+  width: 100%;
+  margin-bottom: 30px;
+  background-color: $color-mapa;
+  border: 2px solid $color-superficie;
+  border-radius: $radio-grande;
+  @include sombra-suave;
+
+  @include responsive("mobile") {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+}
+
+.mapa-inner {
+  position: relative;
+  width: 100%;
+
+  @include responsive("mobile") {
+    width: 900px;
+  }
+}
+
+.mapa {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.punto {
+  @include flex-center;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  background-color: $color-primario;
+  border: 2px solid $color-blanco;
+  border-radius: 50%;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  transition:
+    transform 0.2s,
+    background-color 0.2s;
+
+  &:hover {
+    transform: translate(-50%, -50%) scale(1.3);
+  }
+
+  &:focus-visible {
+    outline: 3px solid $color-titulo;
+    outline-offset: 2px;
+  }
+
+  &.activo {
+    background-color: $color-nivel-texto;
+    transform: translate(-50%, -50%) scale(1.3);
+  }
+
+  @include responsive("mobile") {
+    width: 16px;
+    height: 16px;
+  }
+
+  @each $nombre, $posicion in $puntos {
+    &.#{$nombre} {
+      top: map.get($posicion, top);
+      left: map.get($posicion, left);
+    }
+  }
+}

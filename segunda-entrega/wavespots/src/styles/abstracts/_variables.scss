@@ -1,0 +1,40 @@
+// Colores
+$color-blanco: #ffffff;
+$color-fondo: #e3f6f5;
+$color-texto: #1a4d4e;
+$color-titulo: #0f3838;
+$color-subtitulo: #4b7878;
+$color-etiqueta: #3b6b6b;
+$color-placeholder: #538383;
+$color-texto-suave: #55716f;
+$color-superficie: #bbf0ee;
+$color-borde: #9de3e0;
+$color-mapa: #c5eeea;
+$color-primario: #00a896;
+$color-acento: #008f83;
+$color-acento-claro: #edf8f6;
+$color-acento-hover: #d5efea;
+$color-acento-borde: #b5e2dc;
+$color-tarjeta-borde: #75c9c0;
+$color-info: #e0f2ef;
+$color-nivel-fondo: #fff8ed;
+$color-nivel-texto: #d58b27;
+$color-nivel-borde: #f0d5a7;
+$color-estrellas: #d9db63;
+$color-error: #b3261e;
+
+// Tipografía
+$fuente-titulo: "Roboto", sans-serif;
+$fuente-mono: monospace;
+
+// Medidas
+$ancho-maximo: 1200px;
+$radio-chico: 10px;
+$radio-medio: 12px;
+$radio-grande: 16px;
+
+// Puntos de corte para responsive
+$breakpoints: (
+  "tablet": 900px,
+  "mobile": 500px,
+);

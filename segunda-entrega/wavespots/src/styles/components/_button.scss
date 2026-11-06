@@ -1,0 +1,17 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.btn-primario {
+  @include boton($color-primario, $color-blanco, $color-acento);
+}
+
+.btn-secundario {
+  @include boton($color-superficie, $color-texto, $color-borde, $color-borde);
+}
+
+.btn-icono {
+  @include boton(transparent, $color-acento, $color-acento-claro, transparent);
+  padding: 4px 8px;
+  font-size: 20px;
+  line-height: 1;
+}
