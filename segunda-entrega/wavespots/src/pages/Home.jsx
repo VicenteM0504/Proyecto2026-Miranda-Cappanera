@@ -25,7 +25,8 @@ const valoresUnicos = (spots, campo) =>
 
 const leerFavoritos = () => {
   try {
-    return JSON.parse(localStorage.getItem("favoritos")) ?? [];
+    const guardados = JSON.parse(localStorage.getItem("favoritos"));
+    return Array.isArray(guardados) ? guardados : [];
   } catch {
     return [];
   }

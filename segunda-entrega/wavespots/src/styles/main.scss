@@ -1,0 +1,458 @@
+/* Estilos generales de WaveSpots (basados en la primera entrega) */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  color: #1a4d4e;
+  background-color: #e3f6f5;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button,
+a,
+input,
+select {
+  &:focus-visible {
+    outline: 3px solid #007d75;
+    outline-offset: 2px;
+  }
+}
+
+.main-header {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 28px 20px 12px;
+}
+
+.logo-titulo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
+
+.titulos {
+  margin-left: 15px;
+
+  h1 {
+    margin: 0;
+    font-size: 56px;
+    color: #0f3838;
+  }
+
+  p {
+    margin: 4px 0 0;
+    color: #4b7878;
+    font-size: 17px;
+  }
+}
+
+.navegacion {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 22px;
+
+  a {
+    padding: 10px 18px;
+    border-radius: 10px;
+    color: #1a4d4e;
+    text-decoration: none;
+    background-color: #bbf0ee;
+    border: 1px solid #9de3e0;
+
+    &:hover,
+    &.active {
+      background-color: #69cfc5;
+      border-color: #48afa5;
+    }
+  }
+}
+
+main {
+  max-width: 1200px;
+  margin: 16px auto 35px;
+  padding: 0 20px;
+}
+
+.filtros {
+  margin-bottom: 25px;
+
+  > .campo {
+    margin-bottom: 18px;
+  }
+}
+
+.campo {
+  label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #3b6b6b;
+  }
+
+  input,
+  select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #9de3e0;
+    border-radius: 10px;
+    color: #1a4d4e;
+    background-color: #bbf0ee;
+  }
+
+  input::placeholder {
+    color: #538383;
+  }
+
+  [aria-invalid="true"] {
+    border-color: #b52d35;
+  }
+}
+
+.campo-error {
+  margin: 5px 0 0;
+  color: #a9232d;
+  font-size: 13px;
+}
+
+.filters-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-bottom: 16px;
+}
+
+.btn {
+  padding: 11px 18px;
+  border: 1px solid #008f83;
+  border-radius: 10px;
+  background-color: #008f83;
+  color: white;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #006f68;
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+}
+
+.btn-secundario {
+  background-color: #bbf0ee;
+  color: #1a4d4e;
+  border-color: #9de3e0;
+
+  &:hover {
+    background-color: #9de3e0;
+  }
+}
+
+.btn-icono {
+  padding: 2px 8px;
+  font-size: 29px;
+  line-height: 1;
+  color: #d34c60;
+  background-color: transparent;
+  border: none;
+
+  &:hover {
+    color: #a82640;
+    background-color: #fff2f2;
+  }
+}
+
+.mapa-container {
+  width: 100%;
+  overflow: hidden;
+  border: 2px solid #bbf0ee;
+  border-radius: 16px;
+  background-color: #c5eeea;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+}
+
+.mapa-inner {
+  width: 100%;
+  position: relative;
+}
+
+.mapa {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.punto {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  transform: translate(-50%, -50%);
+  background-color: #00a896;
+  border: 2px solid white;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &:hover,
+  &.activo {
+    background-color: #006f68;
+    box-shadow: 0 0 0 3px #8ddbd1;
+  }
+}
+
+/* Posiciones de los puntos del mapa, iguales a la primera entrega */
+.punto.saquearema { top: 76%; left: 36%; }
+.punto.pipeline { top: 50%; left: 4%; }
+.punto.puerto-escondido { top: 52%; left: 19%; }
+.punto.pavones { top: 56%; left: 23%; }
+.punto.punta-roca { top: 53%; left: 21%; }
+.punto.chicama { top: 67%; left: 25%; }
+.punto.punta-de-lobos { top: 80%; left: 27.5%; }
+.punto.nazare { top: 37%; left: 44.5%; }
+.punto.hossegor { top: 33%; left: 46.5%; }
+.punto.mundaka { top: 35%; left: 45.7%; }
+.punto.bundoran { top: 27%; left: 45%; }
+.punto.thurso-east { top: 25%; left: 46.7%; }
+.punto.jeffreys-bay { top: 83.5%; left: 54.5%; }
+.punto.skeleton-bay { top: 76%; left: 51%; }
+.punto.anchor-point { top: 44%; left: 44.5%; }
+.punto.uluwatu { top: 68%; left: 77.5%; }
+.punto.cloudbreak { top: 74%; left: 97%; }
+.punto.snapper-rocks { top: 83%; left: 89.4%; }
+.punto.raglan { top: 88%; left: 95%; }
+.punto.arugam-bay { top: 59.3%; left: 70%; }
+.punto.cloud-9 { top: 55%; left: 82%; }
+
+.lista-spots {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  scroll-margin-top: 15px;
+}
+
+.tarjeta {
+  overflow: hidden;
+  background-color: white;
+  border: 1px solid #75c9c0;
+  border-radius: 15px;
+}
+
+.imagen-tarjeta {
+  position: relative;
+  height: 210px;
+}
+
+.foto-spot {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nivel {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  padding: 8px 12px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #985d0b;
+  background-color: #fff8ed;
+  border: 1px solid #f0d5a7;
+  border-radius: 8px;
+}
+
+.estrellas {
+  position: absolute;
+  bottom: 15px;
+  left: 18px;
+  color: #f5dc50;
+  font-size: 19px;
+  letter-spacing: 3px;
+  text-shadow: 0 1px 3px #333;
+}
+
+.contenido-tarjeta {
+  padding: 20px;
+}
+
+.title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+
+  h2 {
+    margin: 0;
+    font-size: 21px;
+  }
+}
+
+.acciones-tarjeta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.clima {
+  padding: 7px 12px;
+  color: #008f83;
+  background-color: #edf8f6;
+  border: 1px solid #b5e2dc;
+  border-radius: 10px;
+  font-size: 13px;
+  text-decoration: none;
+
+  &:hover {
+    background-color: #d5efea;
+  }
+}
+
+.ubicacion {
+  margin-top: 10px;
+  color: #008f83;
+  font-size: 14px;
+}
+
+.description {
+  margin: 18px 0 20px;
+  color: #55716f;
+  line-height: 1.6;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.info-box {
+  padding: 12px 15px;
+  background-color: #e0f2ef;
+  border-radius: 10px;
+
+  span {
+    color: #008f83;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+  }
+
+  p {
+    margin: 5px 0 0;
+    font-size: 14px;
+  }
+}
+
+.mensaje-estado {
+  padding: 16px;
+  text-align: center;
+  background-color: #d2f0ec;
+  border-radius: 10px;
+}
+
+.mensaje-error {
+  color: #a9232d;
+  background-color: #ffe5e5;
+}
+
+.pagina {
+  max-width: 750px;
+  margin: 0 auto;
+
+  h2 {
+    color: #0f3838;
+  }
+}
+
+.formulario {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  padding: 24px;
+  border: 1px solid #9de3e0;
+  border-radius: 14px;
+  background-color: white;
+
+  .campo input,
+  .campo select {
+    background-color: #f1fbf9;
+  }
+}
+
+.formulario-acciones {
+  display: flex;
+  gap: 12px;
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 900px) {
+  .filters-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .titulos h1 {
+    font-size: 33px;
+  }
+
+  .titulos p {
+    font-size: 13px;
+  }
+
+  .logo-titulo img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .filters-grid,
+  .formulario {
+    grid-template-columns: 1fr;
+  }
+
+  .main-header {
+    padding: 20px 16px;
+  }
+
+  main {
+    padding: 0 16px;
+  }
+
+  .mapa-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .mapa-inner {
+    width: 900px;
+  }
+
+  .punto {
+    width: 16px;
+    height: 16px;
+  }
+
+  .formulario {
+    padding: 16px;
+  }
+}
