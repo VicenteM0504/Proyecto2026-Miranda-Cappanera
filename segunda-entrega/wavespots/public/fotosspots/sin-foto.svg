@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="440" viewBox="0 0 560 440">
+  <rect width="560" height="440" fill="#bbf0ee" />
+  <path d="M0 300 Q70 250 140 300 T280 300 T420 300 T560 300 V440 H0 Z" fill="#00a896" opacity="0.55" />
+  <path d="M0 340 Q70 290 140 340 T280 340 T420 340 T560 340 V440 H0 Z" fill="#008f83" opacity="0.75" />
+  <text x="280" y="170" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#1a4d4e">Sin foto</text>
+</svg>
