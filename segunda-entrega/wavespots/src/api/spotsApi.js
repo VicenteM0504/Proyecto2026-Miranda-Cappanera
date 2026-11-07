@@ -1,32 +1,28 @@
-const API_URL = "http://localhost:3001";
+const BASE_URL = "http://localhost:3001/";
 
 /**
- * Pide al servidor mock (db.json) la lista completa de spots.
+ * Obtiene el listado completo de spots desde el servidor mock (db.json).
  * @method getSpots
- * @return {Promise<Array>} Arreglo de objetos con los spots de surf.
+ * @return {Promise<Array>} Lista de spots de surf
  */
-export const getSpots = async () => {
-  const respuesta = await fetch(`${API_URL}/spots`);
-  if (!respuesta.ok) {
-    throw new Error("No se pudieron cargar los spots");
-  }
-  return respuesta.json();
-};
+export async function getSpots() {
+  const res = await fetch(`${BASE_URL}spots`);
+  if (!res.ok) throw new Error("Error al obtener listado de spots");
+  return res.json();
+}
 
 /**
- * Envía un spot nuevo al servidor mock para que lo agregue en db.json.
+ * Agrega un nuevo spot de surf en el servidor mock (db.json).
  * @method crearSpot
- * @param {object} spot - Datos del spot a guardar (sin id, lo asigna el servidor).
- * @return {Promise<object>} El spot guardado, ya con su id.
+ * @param {object} nuevoSpot - Objeto con los datos del spot a agregar
+ * @return {Promise<object>} El spot creado
  */
-export const crearSpot = async (spot) => {
-  const respuesta = await fetch(`${API_URL}/spots`, {
+export async function crearSpot(nuevoSpot) {
+  const res = await fetch(`${BASE_URL}spots`, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(spot),
+    headers: { "Content-type": "application/json" },
+    body: JSON.stringify(nuevoSpot),
   });
-  if (!respuesta.ok) {
-    throw new Error("No se pudo guardar el spot");
-  }
-  return respuesta.json();
-};
+  if (!res.ok) throw new Error("Error al guardar el spot");
+  return res.json();
+}

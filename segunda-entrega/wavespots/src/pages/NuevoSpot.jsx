@@ -3,192 +3,297 @@ import { useNavigate } from "react-router-dom";
 import { crearSpot } from "@api/spotsApi.js";
 import Button from "@components/Button.jsx";
 import Input from "@components/Input.jsx";
-import Select from "@components/Select.jsx";
 
-const NIVELES = ["Principiante", "Intermedio", "Avanzado", "Experto"];
-const TIPOS_OLA = ["Beach Break", "Point Break", "Reef Break", "River Mouth"];
-const ESTRELLAS = ["1", "2", "3", "4", "5"];
-
-const CAMPOS = [
-  { id: "nombre", label: "Nombre", placeholder: "Ej: Pipeline" },
-  { id: "pais", label: "País", placeholder: "Ej: Brasil" },
-  { id: "oceano", label: "Océano / Mar", placeholder: "Ej: Pacífico" },
-  { id: "altura", label: "Altura de ola", placeholder: "Ej: 3-10 ft" },
-  { id: "temporada", label: "Mejor temporada", placeholder: "Ej: May - Sep" },
-  { id: "viento", label: "Viento", placeholder: "Ej: NE Offshore" },
-  {
-    id: "clima",
-    label: "Link del clima",
-    placeholder: "Ej: https://www.windguru.cz/74458",
-  },
-  {
-    id: "descripcion",
-    label: "Descripción",
-    placeholder: "Contá cómo es la ola...",
-  },
-];
-
-const SELECTS = [
-  {
-    id: "nivel",
-    label: "Nivel",
-    opciones: NIVELES,
-    opcionVacia: "Elegí un nivel",
-  },
-  {
-    id: "ola",
-    label: "Tipo de ola",
-    opciones: TIPOS_OLA,
-    opcionVacia: "Elegí un tipo de ola",
-  },
-  {
-    id: "estrellas",
-    label: "Estrellas",
-    opciones: ESTRELLAS,
-    opcionVacia: "Elegí la cantidad",
-  },
-];
-
-const VALORES_INICIALES = {
-  nombre: "",
-  pais: "",
-  oceano: "",
-  altura: "",
-  temporada: "",
-  viento: "",
-  clima: "",
-  descripcion: "",
-  nivel: "",
-  ola: "",
-  estrellas: "",
-};
-
-const VALIDACIONES = {
-  nombre: (valor) =>
-    valor.length < 3 ? "El nombre debe tener al menos 3 caracteres." : "",
-  pais: (valor) =>
-    valor.length < 3 ? "El país debe tener al menos 3 caracteres." : "",
-  oceano: (valor) =>
-    valor.length < 3 ? "El océano debe tener al menos 3 caracteres." : "",
-  altura: (valor) =>
-    /^\d+-\d+\+? ft$/.test(valor) ? "" : 'Usá el formato "3-10 ft".',
-  temporada: (valor) =>
-    /^[A-Za-z]{3} - [A-Za-z]{3}$/.test(valor)
-      ? ""
-      : 'Usá el formato "May - Sep".',
-  viento: (valor) =>
-    valor.length < 3 ? "Indicá el viento, por ejemplo NE Offshore." : "",
-  clima: (valor) =>
-    /^https?:\/\/\S+$/.test(valor)
-      ? ""
-      : "Ingresá un link que empiece con http:// o https://.",
-  descripcion: (valor) =>
-    valor.length < 20
-      ? "La descripción debe tener al menos 20 caracteres."
-      : "",
-  nivel: (valor) => (valor === "" ? "Elegí un nivel." : ""),
-  ola: (valor) => (valor === "" ? "Elegí un tipo de ola." : ""),
-  estrellas: (valor) => (valor === "" ? "Elegí la cantidad de estrellas." : ""),
-};
-
-/**
- * Formulario para agregar un spot nuevo. Valida cada campo en tiempo real (onChange) y, si todo está bien, lo envía al servidor mock y vuelve a la página principal.
- * @method NuevoSpot
- */
 const NuevoSpot = () => {
-  const [valores, setValores] = useState(VALORES_INICIALES);
+  const [nombre, setNombre] = useState("");
+  const [pais, setPais] = useState("");
+  const [oceano, setOceano] = useState("");
+  const [nivel, setNivel] = useState("");
+  const [ola, setOla] = useState("");
+  const [altura, setAltura] = useState("");
+  const [temporada, setTemporada] = useState("");
+  const [viento, setViento] = useState("");
+  const [estrellas, setEstrellas] = useState("");
+  const [clima, setClima] = useState("");
+  const [descripcion, setDescripcion] = useState("");
+
   const [errores, setErrores] = useState({});
-  const [errorEnvio, setErrorEnvio] = useState("");
-  const [enviando, setEnviando] = useState(false);
   const navigate = useNavigate();
 
-  const cambiarValor = (evento) => {
-    const { name, value } = evento.target;
-    setValores({ ...valores, [name]: value });
-    setErrores({ ...errores, [name]: VALIDACIONES[name](value.trim()) });
+  /**
+   * Valida en tiempo real cada campo del formulario a medida que el usuario escribe.
+   * @method validarCampo
+   * @param {string} campo - Nombre del campo a validar
+   * @param {string} valor - Valor ingresado por el usuario
+   */
+  const validarCampo = (campo, valor) => {
+    let mensaje = "";
+    if (!valor.trim()) {
+      mensaje = "Este campo es obligatorio.";
+    } else if (
+      (campo === "nombre" || campo === "pais" || campo === "oceano") &&
+      valor.trim().length < 3
+    ) {
+      mensaje = "Debe tener al menos 3 caracteres.";
+    } else if (campo === "clima" && !valor.startsWith("http")) {
+      mensaje = "El link debe comenzar con http o https.";
+    } else if (campo === "descripcion" && valor.trim().length < 10) {
+      mensaje = "La descripción debe tener al menos 10 caracteres.";
+    }
+
+    setErrores((prev) => ({ ...prev, [campo]: mensaje }));
+    return mensaje === "";
   };
 
-  const enviar = async (evento) => {
-    evento.preventDefault();
-    const nuevosErrores = Object.fromEntries(
-      Object.keys(VALIDACIONES).map((campo) => [
-        campo,
-        VALIDACIONES[campo](valores[campo].trim()),
-      ]),
-    );
-    setErrores(nuevosErrores);
-    if (Object.values(nuevosErrores).some(Boolean)) {
+  /**
+   * Comprueba todos los campos y envía el nuevo spot al servidor mock.
+   * @method handleSubmit
+   * @param {object} e - Evento del formulario
+   */
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const esValido =
+      validarCampo("nombre", nombre) &
+      validarCampo("pais", pais) &
+      validarCampo("oceano", oceano) &
+      validarCampo("nivel", nivel) &
+      validarCampo("ola", ola) &
+      validarCampo("altura", altura) &
+      validarCampo("temporada", temporada) &
+      validarCampo("viento", viento) &
+      validarCampo("estrellas", estrellas) &
+      validarCampo("clima", clima) &
+      validarCampo("descripcion", descripcion);
+
+    if (!esValido) {
       return;
     }
 
-    setEnviando(true);
-    setErrorEnvio("");
     try {
       await crearSpot({
-        nombre: valores.nombre.trim(),
-        pais: valores.pais.trim(),
-        oceano: valores.oceano.trim(),
-        nivel: valores.nivel,
-        ola: valores.ola,
+        nombre: nombre.trim(),
+        pais: pais.trim(),
+        oceano: oceano.trim(),
+        nivel,
+        ola,
         imagen: "sin-foto.svg",
-        estrellas: "★".repeat(Number(valores.estrellas)),
-        clima: valores.clima.trim(),
-        descripcion: valores.descripcion.trim(),
-        altura: valores.altura.trim(),
-        temporada: valores.temporada.trim(),
-        viento: valores.viento.trim(),
+        estrellas,
+        clima: clima.trim(),
+        descripcion: descripcion.trim(),
+        altura: altura.trim(),
+        temporada: temporada.trim(),
+        viento: viento.trim(),
       });
       navigate("/");
-    } catch {
-      setErrorEnvio(
-        "No se pudo guardar el spot. Verificá que el servidor esté corriendo (npm run mock).",
-      );
-      setEnviando(false);
+    } catch (error) {
+      console.error(`Error al guardar el spot: ${error}`);
     }
   };
 
   return (
-    <section className="pagina">
-      <h2>Agregar un spot</h2>
+    <section className="nuevo-spot-container">
+      <h2>Agregar nuevo spot</h2>
 
-      <form className="formulario" onSubmit={enviar} noValidate>
-        {CAMPOS.map((campo) => (
+      <form className="formulario-spot" onSubmit={handleSubmit}>
+        <Input
+          id="nombre"
+          label="NOMBRE DEL SPOT"
+          placeholder="Ej: Pipeline"
+          maxLength={30}
+          size={30}
+          value={nombre}
+          onChange={(e) => {
+            setNombre(e.target.value);
+            validarCampo("nombre", e.target.value);
+          }}
+          error={errores.nombre}
+        />
+
+        <Input
+          id="pais"
+          label="PAÍS"
+          placeholder="Ej: Brasil"
+          maxLength={30}
+          size={30}
+          value={pais}
+          onChange={(e) => {
+            setPais(e.target.value);
+            validarCampo("pais", e.target.value);
+          }}
+          error={errores.pais}
+        />
+
+        <Input
+          id="oceano"
+          label="OCÉANO / MAR"
+          placeholder="Ej: Pacífico"
+          maxLength={30}
+          size={30}
+          value={oceano}
+          onChange={(e) => {
+            setOceano(e.target.value);
+            validarCampo("oceano", e.target.value);
+          }}
+          error={errores.oceano}
+        />
+
+        <div className="filter-group">
+          <label htmlFor="nivelNuevo">NIVEL</label>
+          <div className="select-wrapper">
+            <select
+              id="nivelNuevo"
+              value={nivel}
+              onChange={(e) => {
+                setNivel(e.target.value);
+                validarCampo("nivel", e.target.value);
+              }}
+            >
+              <option value="">Seleccionar nivel</option>
+              <option value="Principiante">Principiante</option>
+              <option value="Intermedio">Intermedio</option>
+              <option value="Avanzado">Avanzado</option>
+              <option value="Experto">Experto</option>
+              <option value="Profesional">Profesional</option>
+            </select>
+          </div>
+          {errores.nivel && (
+            <p className="mensaje-error" role="alert">
+              {errores.nivel}
+            </p>
+          )}
+        </div>
+
+        <div className="filter-group">
+          <label htmlFor="olaNuevo">TIPO DE OLA</label>
+          <div className="select-wrapper">
+            <select
+              id="olaNuevo"
+              value={ola}
+              onChange={(e) => {
+                setOla(e.target.value);
+                validarCampo("ola", e.target.value);
+              }}
+            >
+              <option value="">Seleccionar tipo de ola</option>
+              <option value="Reef Break">Reef Break</option>
+              <option value="Beach Break">Beach Break</option>
+              <option value="Point Break">Point Break</option>
+              <option value="River Mouth">River Mouth</option>
+            </select>
+          </div>
+          {errores.ola && (
+            <p className="mensaje-error" role="alert">
+              {errores.ola}
+            </p>
+          )}
+        </div>
+
+        <div className="filter-group">
+          <label htmlFor="estrellasNuevo">ESTRELLAS</label>
+          <div className="select-wrapper">
+            <select
+              id="estrellasNuevo"
+              value={estrellas}
+              onChange={(e) => {
+                setEstrellas(e.target.value);
+                validarCampo("estrellas", e.target.value);
+              }}
+            >
+              <option value="">Seleccionar estrellas</option>
+              <option value="★★★">★★★</option>
+              <option value="★★★★">★★★★</option>
+              <option value="★★★★★">★★★★★</option>
+            </select>
+          </div>
+          {errores.estrellas && (
+            <p className="mensaje-error" role="alert">
+              {errores.estrellas}
+            </p>
+          )}
+        </div>
+
+        <Input
+          id="altura"
+          label="ALTURA DE OLA"
+          placeholder="Ej: 3-10 ft"
+          maxLength={20}
+          size={20}
+          value={altura}
+          onChange={(e) => {
+            setAltura(e.target.value);
+            validarCampo("altura", e.target.value);
+          }}
+          error={errores.altura}
+        />
+
+        <Input
+          id="temporada"
+          label="MEJOR TEMPORADA"
+          placeholder="Ej: May - Sep"
+          maxLength={20}
+          size={20}
+          value={temporada}
+          onChange={(e) => {
+            setTemporada(e.target.value);
+            validarCampo("temporada", e.target.value);
+          }}
+          error={errores.temporada}
+        />
+
+        <Input
+          id="viento"
+          label="VIENTO"
+          placeholder="Ej: NE Offshore"
+          maxLength={25}
+          size={25}
+          value={viento}
+          onChange={(e) => {
+            setViento(e.target.value);
+            validarCampo("viento", e.target.value);
+          }}
+          error={errores.viento}
+        />
+
+        <Input
+          id="clima"
+          label="LINK DEL CLIMA"
+          placeholder="Ej: https://www.windguru.cz/74458"
+          maxLength={80}
+          size={30}
+          value={clima}
+          onChange={(e) => {
+            setClima(e.target.value);
+            validarCampo("clima", e.target.value);
+          }}
+          error={errores.clima}
+        />
+
+        <div className="campo-completo">
           <Input
-            key={campo.id}
-            id={campo.id}
-            label={campo.label}
-            type="text"
-            placeholder={campo.placeholder}
-            value={valores[campo.id]}
-            error={errores[campo.id]}
-            onChange={cambiarValor}
+            id="descripcion"
+            label="DESCRIPCIÓN"
+            placeholder="Breve descripción de la ola..."
+            maxLength={160}
+            size={50}
+            value={descripcion}
+            onChange={(e) => {
+              setDescripcion(e.target.value);
+              validarCampo("descripcion", e.target.value);
+            }}
+            error={errores.descripcion}
           />
-        ))}
+        </div>
 
-        {SELECTS.map((select) => (
-          <Select
-            key={select.id}
-            id={select.id}
-            label={select.label}
-            opciones={select.opciones}
-            opcionVacia={select.opcionVacia}
-            value={valores[select.id]}
-            error={errores[select.id]}
-            onChange={cambiarValor}
-          />
-        ))}
-
-        {errorEnvio && (
-          <p className="mensaje-estado mensaje-error" role="alert">
-            {errorEnvio}
-          </p>
-        )}
-
-        <div className="formulario-acciones">
-          <Button type="submit" disabled={enviando}>
-            {enviando ? "Guardando..." : "Guardar spot"}
+        <div className="acciones-formulario">
+          <Button type="submit" className="btn-limpiar">
+            Guardar spot
           </Button>
-          <Button variante="secundario" onClick={() => navigate("/")}>
+          <Button
+            type="button"
+            className="btn-limpiar"
+            onClick={() => navigate("/")}
+          >
             Cancelar
           </Button>
         </div>

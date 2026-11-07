@@ -1,4 +1,3 @@
-
 # WaveSpots
 ---
 ## Índice
@@ -14,12 +13,15 @@
 ## Descripcion del proyecto
 El proyecto **WaveSpots** tiene como objetivo ofrecer spots de surf a surfistas o nuevos surfistas. Como autores del proyecto, les damos la posibilidad de buscar spots de surf mediante filtros como busqueda por pais, nivel, ciudad, oceano/mar y tipo de ola. Asi dandole una busqueda eficiente al surfista. 
 
+---
+
 ## Segunda entrega: cómo ejecutar el proyecto
-Requisito: Node.js
-Entrar a la carpeta del proyecto: cd segunda-entrega/wavespots
-Instalar las dependencias: npm install
-En una terminal, levantar el servidor mock: npm run mock 
-En otra terminal, levantar la aplicación: npm run dev 
+
+- Requisito: Node.js
+- Entrar a la carpeta del proyecto: `cd segunda-entrega/wavespots`
+- Instalar las dependencias: `npm install`
+- En una terminal, levantar el servidor mock: `npm run mock`
+- En otra terminal, levantar la aplicación: `npm run dev`
 ---
 
 ## Sitio Web
@@ -50,24 +52,20 @@ Abajo del mapa, tenemos el apartado de los spots disponibles en relacion de depe
 - Google Fonts
 - GitHub
 - React y Vite
-- react-router-dom 
-- Sass 
-- json-server 
-- oxlint 
+- react-router-dom
+- Sass
+- json-server
 
 ---
 ## Mockup
 **link:** https://www.figma.com/make/DMlnms4VNc9wmStelxs8C4/Dise%C3%B1o-alta-fidelidad-surf-app?t=FyymSFHFSKTF3OTS-1
 
-
-
 ---
 
-##  Aclaraciones
+## Aclaraciones
 
 - Se aclaro en clase con la profe, que como no nos deja descargar el mockup, se lo añade por correo (ademas del link adjunto).
-- Se acordo en clase que no hay navegacion entre paginas.
-- Al final del wirframe, se aclaran los mensajes de error posibles para el usuario.
+- Al final del wireframe, se aclaran los mensajes de error posibles para el usuario.
 
 ### Autores
 

@@ -1,23 +1,46 @@
 /**
- * Campo de texto genérico con su label y un mensaje de error accesible.
+ * Componente genérico de campo de texto con etiqueta y mensaje de error accesible.
  * @method Input
- * @param {string} id - Id del input (también se usa como name y para el label).
- * @param {string} label - Texto de la etiqueta.
- * @param {string} error - Mensaje de error; si está vacío no se muestra nada.
+ * @param {string} id - Identificador único del input y referencia del label
+ * @param {string} label - Texto del label
+ * @param {string} placeholder - Texto de ayuda dentro del input
+ * @param {string} value - Valor actual del campo
+ * @param {Function} onChange - Función para actualizar el valor en tiempo real
+ * @param {number} maxLength - Cantidad máxima de caracteres permitidos
+ * @param {number} size - Tamaño visual del input
+ * @param {string} icono - Icono opcional a mostrar dentro del campo
+ * @param {string} error - Mensaje de error de validación
  */
-const Input = ({ id, label, error, ...resto }) => {
+const Input = ({
+  id,
+  label,
+  placeholder,
+  value,
+  onChange,
+  maxLength = 40,
+  size = 30,
+  icono,
+  error,
+}) => {
   return (
-    <div className="campo">
+    <div className="search-container">
       <label htmlFor={id}>{label}</label>
-      <input
-        id={id}
-        name={id}
-        aria-invalid={Boolean(error)}
-        aria-describedby={error ? `${id}-error` : undefined}
-        {...resto}
-      />
+      <div className="input-wrapper">
+        {icono && <span className="search-icon">{icono}</span>}
+        <input
+          type="text"
+          id={id}
+          name={id}
+          placeholder={placeholder}
+          maxLength={maxLength}
+          size={size}
+          value={value}
+          onChange={onChange}
+          className={icono ? "con-icono" : ""}
+        />
+      </div>
       {error && (
-        <p id={`${id}-error`} className="campo-error" role="alert">
+        <p className="mensaje-error" role="alert">
           {error}
         </p>
       )}

@@ -1,63 +1,162 @@
 import Button from "@components/Button.jsx";
 import Input from "@components/Input.jsx";
-import Select from "@components/Select.jsx";
 
-/**
- * Buscador y desplegables para filtrar los spots, más el botón que los limpia.
- * @method Filtros
- * @param {object} filtros - Valores actuales: busqueda, pais, nivel, ola y oceano.
- * @param {object} opciones - Opciones de cada desplegable: paises, niveles, olas y oceanos.
- * @param {Function} onCambio - Se ejecuta cuando cambia cualquier campo.
- * @param {Function} onLimpiar - Se ejecuta al apretar "Limpiar filtros".
- */
-const Filtros = ({ filtros, opciones, onCambio, onLimpiar }) => {
+const PAISES = [
+  "Brasil",
+  "EE. UU.",
+  "México",
+  "Costa Rica",
+  "El Salvador",
+  "Perú",
+  "Chile",
+  "Portugal",
+  "Francia",
+  "España",
+  "Irlanda",
+  "Reino Unido",
+  "Sudáfrica",
+  "Namibia",
+  "Marruecos",
+  "Indonesia",
+  "Fiyi",
+  "Australia",
+  "Nueva Zelanda",
+  "Sri Lanka",
+  "Filipinas",
+];
+
+const NIVELES = [
+  "Principiante",
+  "Intermedio",
+  "Avanzado",
+  "Experto",
+  "Profesional",
+];
+
+const OCEANOS = [
+  "Pacífico",
+  "Atlántico",
+  "Antártico",
+  "Mar Cantábrico",
+  "Índico",
+];
+
+const OLAS = ["Reef Break", "Beach Break", "Point Break", "River Mouth"];
+
+const Filtros = ({
+  busqueda,
+  pais,
+  nivel,
+  oceano,
+  ola,
+  errorBusqueda,
+  onBuscar,
+  onCambiarPais,
+  onCambiarNivel,
+  onCambiarOceano,
+  onCambiarOla,
+  onLimpiar,
+}) => {
   return (
-    <section className="filtros" aria-label="Filtros">
+    <div className="filtros-contenedor">
       <Input
-        id="busqueda"
-        label="Búsqueda"
-        type="text"
+        id="Busqueda"
+        label="Busqueda"
         placeholder="Buscar por nombre..."
         maxLength={30}
-        value={filtros.busqueda}
-        onChange={onCambio}
+        size={30}
+        icono="🔍"
+        value={busqueda}
+        onChange={onBuscar}
+        error={errorBusqueda}
       />
 
-      <div className="filters-grid">
-        <Select
-          id="pais"
-          label="País"
-          opciones={opciones.paises}
-          value={filtros.pais}
-          onChange={onCambio}
-        />
-        <Select
-          id="nivel"
-          label="Nivel"
-          opciones={opciones.niveles}
-          value={filtros.nivel}
-          onChange={onCambio}
-        />
-        <Select
-          id="oceano"
-          label="Océano / Mar"
-          opciones={opciones.oceanos}
-          value={filtros.oceano}
-          onChange={onCambio}
-        />
-        <Select
-          id="ola"
-          label="Tipo de ola"
-          opciones={opciones.olas}
-          value={filtros.ola}
-          onChange={onCambio}
-        />
-      </div>
+      <section className="filters-grid">
+        <div className="filter-group">
+          <label htmlFor="Pais">PAÍS</label>
+          <div className="select-wrapper">
+            <span className="field-icon">🚩</span>
+            <select
+              name="Pais"
+              id="Pais"
+              value={pais}
+              onChange={(e) => onCambiarPais(e.target.value)}
+            >
+              <option value="">Todos</option>
+              {PAISES.map((p) => (
+                <option key={p} value={p}>
+                  {p}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
 
-      <Button variante="secundario" onClick={onLimpiar}>
+        <div className="filter-group">
+          <label htmlFor="Nivel">NIVEL</label>
+          <div className="select-wrapper">
+            <span className="field-icon">📊</span>
+            <select
+              name="Nivel"
+              id="Nivel"
+              value={nivel}
+              onChange={(e) => onCambiarNivel(e.target.value)}
+            >
+              <option value="">Todos</option>
+              {NIVELES.map((n) => (
+                <option key={n} value={n}>
+                  {n}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
+
+        <div className="filter-group">
+          <label htmlFor="Oceano">OCÉANO / MAR</label>
+          <div className="select-wrapper">
+            <span className="field-icon">🌙</span>
+            <select
+              name="Oceano"
+              id="Oceano"
+              value={oceano}
+              onChange={(e) => onCambiarOceano(e.target.value)}
+            >
+              <option value="">Todos</option>
+              {OCEANOS.map((oc) => (
+                <option key={oc} value={oc}>
+                  {oc}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
+
+        <div className="filter-group">
+          <label htmlFor="Ola">TIPO DE OLA</label>
+          <div className="select-wrapper">
+            <span className="field-icon">⇅</span>
+            <select
+              name="Ola"
+              id="Ola"
+              value={ola}
+              onChange={(e) => onCambiarOla(e.target.value)}
+            >
+              <option value="">Todos</option>
+              {OLAS.map((o) => (
+                <option key={o} value={o}>
+                  {o}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <Button className="btn-limpiar" onClick={onLimpiar}>
         Limpiar filtros
       </Button>
-    </section>
+    </div>
   );
 };
 

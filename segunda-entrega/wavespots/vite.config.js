@@ -1,20 +1,16 @@
-import { fileURLToPath, URL } from "node:url";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
-
-const ruta = (carpeta) =>
-  fileURLToPath(new URL(`./src/${carpeta}`, import.meta.url));
+import path from "path";
 
 export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      "@": ruta(""),
-      "@api": ruta("api"),
-      "@assets": ruta("assets"),
-      "@components": ruta("components"),
-      "@pages": ruta("pages"),
-      "@styles": ruta("styles"),
+      "@components": path.resolve(__dirname, "./src/components"),
+      "@pages": path.resolve(__dirname, "./src/pages"),
+      "@styles": path.resolve(__dirname, "./src/styles"),
+      "@assets": path.resolve(__dirname, "./src/assets"),
+      "@api": path.resolve(__dirname, "./src/api"),
     },
   },
 });
