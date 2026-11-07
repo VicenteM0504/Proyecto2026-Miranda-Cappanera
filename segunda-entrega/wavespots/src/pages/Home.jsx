@@ -1,163 +1,195 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { getSpots } from "@api/spotsApi.js";
 import Filtros from "@components/Filtros.jsx";
 import Mapa from "@components/Mapa.jsx";
 import TarjetaSpot from "@components/TarjetaSpot.jsx";
 
-const FILTROS_VACIOS = {
-  busqueda: "",
-  pais: "",
-  nivel: "",
-  ola: "",
-  oceano: "",
-};
-
-const normalizar = (texto) =>
-  texto
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase();
-
-const valoresUnicos = (spots, campo) =>
-  [...new Set(spots.map((spot) => spot[campo]))].sort((a, b) =>
-    a.localeCompare(b),
-  );
-
-const leerFavoritos = () => {
-  try {
-    const guardados = JSON.parse(localStorage.getItem("favoritos"));
-    return Array.isArray(guardados) ? guardados : [];
-  } catch {
-    return [];
-  }
-};
-
-/**
- * Página principal: filtros, mapa y tarjetas de los spots que trae el servidor mock.
- * @method Home
- */
 const Home = () => {
   const [spots, setSpots] = useState([]);
-  const [cargando, setCargando] = useState(true);
-  const [error, setError] = useState("");
-  const [filtros, setFiltros] = useState(FILTROS_VACIOS);
+  const [spotsFiltrados, setSpotsFiltrados] = useState([]);
+  const [busqueda, setBusqueda] = useState("");
+  const [pais, setPais] = useState(localStorage.getItem("paisFiltro") || "");
+  const [nivel, setNivel] = useState("");
+  const [oceano, setOceano] = useState("");
+  const [ola, setOla] = useState("");
   const [spotSeleccionado, setSpotSeleccionado] = useState(null);
-  const [favoritos, setFavoritos] = useState(leerFavoritos);
-  const listaRef = useRef(null);
+  const [errorBusqueda, setErrorBusqueda] = useState("");
+
+  /**
+   * Obtiene los spots desde la API mock al cargar la página.
+   * @method fetchSpots
+   */
+  const fetchSpots = async () => {
+    try {
+      const data = await getSpots();
+      setSpots(data);
+      const paisGuardado = localStorage.getItem("paisFiltro") || "";
+      if (paisGuardado) {
+        setSpotsFiltrados(data.filter((spo) => spo.pais === paisGuardado));
+      } else {
+        setSpotsFiltrados(data);
+      }
+    } catch (error) {
+      console.error(`Error al retornar spots: ${error}`);
+    }
+  };
 
   useEffect(() => {
-    const cargarSpots = async () => {
-      try {
-        setSpots(await getSpots());
-      } catch {
-        setError(
-          "No se pudieron cargar los spots. Verificá que el servidor esté corriendo (npm run mock).",
-        );
-      } finally {
-        setCargando(false);
-      }
-    };
-    cargarSpots();
+    fetchSpots();
   }, []);
 
-  useEffect(() => {
-    localStorage.setItem("favoritos", JSON.stringify(favoritos));
-  }, [favoritos]);
-
-  const cambiarFiltro = (evento) => {
+  /**
+   * Filtra la lista de spots según el texto ingresado en el buscador y las opciones seleccionadas.
+   * Si no hay coincidencias, informa el error al usuario, blanquea la búsqueda y muestra todos los spots.
+   * @method aplicarFiltros
+   * @param {string} textoBusqueda - Texto a buscar por nombre
+   * @param {string} paisSel - País seleccionado
+   * @param {string} nivelSel - Nivel seleccionado
+   * @param {string} oceanoSel - Océano seleccionado
+   * @param {string} olaSel - Tipo de ola seleccionado
+   */
+  const aplicarFiltros = (textoBusqueda, paisSel, nivelSel, oceanoSel, olaSel) => {
     setSpotSeleccionado(null);
-    setFiltros({ ...filtros, [evento.target.name]: evento.target.value });
+    let newLista = spots;
+    const searchWord = textoBusqueda.trim();
+
+    if (searchWord) {
+      newLista = newLista.filter((spo) =>
+        spo.nombre.toLowerCase().includes(searchWord.toLowerCase()),
+      );
+    }
+
+    if (paisSel) {
+      newLista = newLista.filter((spo) => spo.pais === paisSel);
+    }
+
+    if (nivelSel) {
+      newLista = newLista.filter((spo) => spo.nivel === nivelSel);
+    }
+
+    if (oceanoSel) {
+      newLista = newLista.filter((spo) => spo.oceano === oceanoSel);
+    }
+
+    if (olaSel) {
+      newLista = newLista.filter((spo) => spo.ola === olaSel);
+    }
+
+    if (newLista.length === 0) {
+      setErrorBusqueda("No se encontraron spots con los criterios ingresados.");
+      alert("No se encontraron spots con los criterios ingresados.");
+      setBusqueda("");
+      setPais("");
+      setNivel("");
+      setOceano("");
+      setOla("");
+      localStorage.removeItem("paisFiltro");
+      setSpotsFiltrados(spots);
+    } else {
+      setErrorBusqueda("");
+      setSpotsFiltrados(newLista);
+    }
   };
 
-  const limpiarFiltros = () => {
-    setSpotSeleccionado(null);
-    setFiltros(FILTROS_VACIOS);
+  const handleBuscar = (e) => {
+    const valor = e.target.value;
+    setBusqueda(valor);
+    aplicarFiltros(valor, pais, nivel, oceano, ola);
   };
 
-  const seleccionarSpot = (id) => {
-    if (id === spotSeleccionado) {
-      limpiarFiltros();
+  const handlePais = (valor) => {
+    setPais(valor);
+    localStorage.setItem("paisFiltro", valor);
+    aplicarFiltros(busqueda, valor, nivel, oceano, ola);
+  };
+
+  const handleNivel = (valor) => {
+    setNivel(valor);
+    aplicarFiltros(busqueda, pais, valor, oceano, ola);
+  };
+
+  const handleOceano = (valor) => {
+    setOceano(valor);
+    aplicarFiltros(busqueda, pais, nivel, valor, ola);
+  };
+
+  const handleOla = (valor) => {
+    setOla(valor);
+    aplicarFiltros(busqueda, pais, nivel, oceano, valor);
+  };
+
+  /**
+   * Blanquea el buscador y los filtros desplegables, quita la selección del mapa y vuelve a mostrar la lista completa.
+   * @method resetearFiltros
+   */
+  const resetearFiltros = () => {
+    setSpotSeleccionado(null);
+    setBusqueda("");
+    setPais("");
+    setNivel("");
+    setOceano("");
+    setOla("");
+    setErrorBusqueda("");
+    localStorage.removeItem("paisFiltro");
+    setSpotsFiltrados(spots);
+  };
+
+  /**
+   * Selecciona un spot desde un botón del mapa y filtra las tarjetas.
+   * Si se presiona el mismo botón nuevamente, se quita el filtro.
+   * @method mostrarSpot
+   * @param {string} nombreSpot - Nombre del spot seleccionado en el mapa
+   */
+  const mostrarSpot = (nombreSpot) => {
+    if (spotSeleccionado === nombreSpot) {
+      resetearFiltros();
       return;
     }
-    setFiltros(FILTROS_VACIOS);
-    setSpotSeleccionado(id);
+
+    setSpotSeleccionado(nombreSpot);
+    setBusqueda("");
+    setPais("");
+    setNivel("");
+    setOceano("");
+    setOla("");
+    setErrorBusqueda("");
+
+    const newLista = spots.filter(
+      (spo) => spo.nombre.toLowerCase() === nombreSpot.toLowerCase(),
+    );
+    setSpotsFiltrados(newLista);
+
     if (window.innerWidth <= 900) {
-      listaRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+      document
+        .getElementById("listaSpots")
+        .scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
-
-  const toggleFavorito = (id) => {
-    setFavoritos(
-      favoritos.includes(id)
-        ? favoritos.filter((favorito) => favorito !== id)
-        : [...favoritos, id],
-    );
-  };
-
-  const opciones = {
-    paises: valoresUnicos(spots, "pais"),
-    niveles: valoresUnicos(spots, "nivel"),
-    oceanos: valoresUnicos(spots, "oceano"),
-    olas: valoresUnicos(spots, "ola"),
-  };
-
-  const busqueda = normalizar(filtros.busqueda.trim());
-  const spotsVisibles = spotSeleccionado
-    ? spots.filter((spot) => spot.id === spotSeleccionado)
-    : spots.filter(
-        (spot) =>
-          normalizar(spot.nombre).includes(busqueda) &&
-          (!filtros.pais || spot.pais === filtros.pais) &&
-          (!filtros.nivel || spot.nivel === filtros.nivel) &&
-          (!filtros.ola || spot.ola === filtros.ola) &&
-          (!filtros.oceano || spot.oceano === filtros.oceano),
-      );
 
   return (
     <>
       <Filtros
-        filtros={filtros}
-        opciones={opciones}
-        onCambio={cambiarFiltro}
-        onLimpiar={limpiarFiltros}
+        busqueda={busqueda}
+        pais={pais}
+        nivel={nivel}
+        oceano={oceano}
+        ola={ola}
+        errorBusqueda={errorBusqueda}
+        onBuscar={handleBuscar}
+        onCambiarPais={handlePais}
+        onCambiarNivel={handleNivel}
+        onCambiarOceano={handleOceano}
+        onCambiarOla={handleOla}
+        onLimpiar={resetearFiltros}
       />
 
-      <Mapa
-        spots={spots}
-        spotSeleccionado={spotSeleccionado}
-        onSeleccionar={seleccionarSpot}
-      />
+      <Mapa spots={spots} onMostrarSpot={mostrarSpot} />
 
-      {cargando && (
-        <p className="mensaje-estado" role="status">
-          Cargando spots...
-        </p>
-      )}
-      {error && (
-        <p className="mensaje-estado mensaje-error" role="alert">
-          {error}
-        </p>
-      )}
-      {!cargando && !error && spotsVisibles.length === 0 && (
-        <p className="mensaje-estado" role="status">
-          No se encontraron spots con los criterios ingresados.
-        </p>
-      )}
-
-      <section
-        ref={listaRef}
-        className="lista-spots"
-        aria-label="Spots de surf"
-      >
-        {spotsVisibles.map((spot) => (
-          <TarjetaSpot
-            key={spot.id}
-            spot={spot}
-            esFavorito={favoritos.includes(spot.id)}
-            onToggleFavorito={toggleFavorito}
-          />
+      <div id="listaSpots">
+        {spotsFiltrados.map((spot) => (
+          <TarjetaSpot key={spot.id} spot={spot} />
         ))}
-      </section>
+      </div>
     </>
   );
 };
