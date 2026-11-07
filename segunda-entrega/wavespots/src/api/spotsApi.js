@@ -5,11 +5,11 @@ const BASE_URL = "http://localhost:3001/";
  * @method getSpots
  * @return {Promise<Array>} Lista de spots de surf
  */
-export async function getSpots() {
+export const getSpots = async () => {
   const res = await fetch(`${BASE_URL}spots`);
   if (!res.ok) throw new Error("Error al obtener listado de spots");
   return res.json();
-}
+};
 
 /**
  * Agrega un nuevo spot de surf en el servidor mock (db.json).
@@ -17,7 +17,7 @@ export async function getSpots() {
  * @param {object} nuevoSpot - Objeto con los datos del spot a agregar
  * @return {Promise<object>} El spot creado
  */
-export async function crearSpot(nuevoSpot) {
+export const crearSpot = async (nuevoSpot) => {
   const res = await fetch(`${BASE_URL}spots`, {
     method: "POST",
     headers: { "Content-type": "application/json" },
@@ -25,4 +25,4 @@ export async function crearSpot(nuevoSpot) {
   });
   if (!res.ok) throw new Error("Error al guardar el spot");
   return res.json();
-}
+};

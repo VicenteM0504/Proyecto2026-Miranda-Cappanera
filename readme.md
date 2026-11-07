@@ -2,6 +2,7 @@
 ---
 ## Índice
 - [Descripcion del proyecto](#descripcion-del-proyecto)
+- [Segunda entrega: cómo ejecutar el proyecto](#segunda-entrega-cómo-ejecutar-el-proyecto)
 - [Sitio Web](#sitio-web)
 - [Contenido del proyecto](#contenido-del-proyecto)
 - [Tecnologías y Herramientas](#tecnologias-y-herramientas)
@@ -45,7 +46,6 @@ Abajo del mapa, tenemos el apartado de los spots disponibles en relacion de depe
 ## Tecnologias y herramientas
 - Figma
 - Webstorm
-- Claude
 - HTML
 - CSS
 - JavaScript
