@@ -4,6 +4,10 @@ import { crearSpot } from "@api/spotsApi.js";
 import Button from "@components/Button.jsx";
 import Input from "@components/Input.jsx";
 
+/**
+ * Página con el formulario para agregar un nuevo spot de surf al servidor mock.
+ * @method NuevoSpot
+ */
 const NuevoSpot = () => {
   const [nombre, setNombre] = useState("");
   const [pais, setPais] = useState("");
@@ -25,6 +29,7 @@ const NuevoSpot = () => {
    * @method validarCampo
    * @param {string} campo - Nombre del campo a validar
    * @param {string} valor - Valor ingresado por el usuario
+   * @return {boolean} Indica si el campo es válido
    */
   const validarCampo = (campo, valor) => {
     let mensaje = "";
@@ -53,20 +58,31 @@ const NuevoSpot = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const esValido =
-      validarCampo("nombre", nombre) &
-      validarCampo("pais", pais) &
-      validarCampo("oceano", oceano) &
-      validarCampo("nivel", nivel) &
-      validarCampo("ola", ola) &
-      validarCampo("altura", altura) &
-      validarCampo("temporada", temporada) &
-      validarCampo("viento", viento) &
-      validarCampo("estrellas", estrellas) &
-      validarCampo("clima", clima) &
-      validarCampo("descripcion", descripcion);
+    const nombreOk = validarCampo("nombre", nombre);
+    const paisOk = validarCampo("pais", pais);
+    const oceanoOk = validarCampo("oceano", oceano);
+    const nivelOk = validarCampo("nivel", nivel);
+    const olaOk = validarCampo("ola", ola);
+    const alturaOk = validarCampo("altura", altura);
+    const temporadaOk = validarCampo("temporada", temporada);
+    const vientoOk = validarCampo("viento", viento);
+    const estrellasOk = validarCampo("estrellas", estrellas);
+    const climaOk = validarCampo("clima", clima);
+    const descripcionOk = validarCampo("descripcion", descripcion);
 
-    if (!esValido) {
+    if (
+      !nombreOk ||
+      !paisOk ||
+      !oceanoOk ||
+      !nivelOk ||
+      !olaOk ||
+      !alturaOk ||
+      !temporadaOk ||
+      !vientoOk ||
+      !estrellasOk ||
+      !climaOk ||
+      !descripcionOk
+    ) {
       return;
     }
 
