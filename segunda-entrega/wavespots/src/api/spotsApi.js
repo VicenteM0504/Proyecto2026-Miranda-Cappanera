@@ -1,14 +1,21 @@
+import datosIniciales from "../data/db.json";
+
 const BASE_URL = "http://localhost:3001/";
 
 /**
  * Obtiene el listado completo de spots desde el servidor mock (db.json).
+ * Si el servidor mock no está corriendo en la terminal, devuelve los datos de db.json.
  * @method getSpots
  * @return {Promise<Array>} Lista de spots de surf
  */
 export const getSpots = async () => {
-  const res = await fetch(`${BASE_URL}spots`);
-  if (!res.ok) throw new Error("Error al obtener listado de spots");
-  return res.json();
+  try {
+    const res = await fetch(`${BASE_URL}spots`);
+    if (!res.ok) throw new Error("Error al obtener listado de spots");
+    return await res.json();
+  } catch {
+    return datosIniciales.spots;
+  }
 };
 
 /**
