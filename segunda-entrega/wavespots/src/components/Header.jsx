@@ -1,5 +1,10 @@
 import { Link } from "react-router-dom";
 
+/**
+ * Encabezado de la aplicación con el logotipo, título y barra de navegación.
+ * @method Header
+ * @return {JSX.Element} Componente de cabecera
+ */
 const Header = () => {
   return (
     <header className="main-header">

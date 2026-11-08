@@ -4,6 +4,11 @@ import Filtros from "@components/Filtros.jsx";
 import Mapa from "@components/Mapa.jsx";
 import TarjetaSpot from "@components/TarjetaSpot.jsx";
 
+/**
+ * Página principal que muestra los filtros, el mapa interactivo y el listado de tarjetas de spots.
+ * @method Home
+ * @return {JSX.Element} Vista principal de WaveSpots
+ */
 const Home = () => {
   const [spots, setSpots] = useState([]);
   const [spotsFiltrados, setSpotsFiltrados] = useState([]);
@@ -95,27 +100,52 @@ const Home = () => {
     }
   };
 
+  /**
+   * Actualiza el texto de búsqueda en tiempo real y aplica los filtros.
+   * @method handleBuscar
+   * @param {object} e - Evento del input de búsqueda
+   */
   const handleBuscar = (e) => {
     const valor = e.target.value;
     setBusqueda(valor);
     aplicarFiltros(valor, pais, nivel, oceano, ola);
   };
 
+  /**
+   * Actualiza el filtro de país y filtra la lista de spots.
+   * @method handlePais
+   * @param {string} valor - País elegido
+   */
   const handlePais = (valor) => {
     setPais(valor);
     aplicarFiltros(busqueda, valor, nivel, oceano, ola);
   };
 
+  /**
+   * Actualiza el filtro de nivel y filtra la lista de spots.
+   * @method handleNivel
+   * @param {string} valor - Nivel elegido
+   */
   const handleNivel = (valor) => {
     setNivel(valor);
     aplicarFiltros(busqueda, pais, valor, oceano, ola);
   };
 
+  /**
+   * Actualiza el filtro de océano y filtra la lista de spots.
+   * @method handleOceano
+   * @param {string} valor - Océano elegido
+   */
   const handleOceano = (valor) => {
     setOceano(valor);
     aplicarFiltros(busqueda, pais, nivel, valor, ola);
   };
 
+  /**
+   * Actualiza el filtro de tipo de ola y filtra la lista de spots.
+   * @method handleOla
+   * @param {string} valor - Tipo de ola elegido
+   */
   const handleOla = (valor) => {
     setOla(valor);
     aplicarFiltros(busqueda, pais, nivel, oceano, valor);
@@ -157,6 +187,7 @@ const Home = () => {
   return (
     <>
       <Filtros
+        spots={spots}
         busqueda={busqueda}
         pais={pais}
         nivel={nivel}

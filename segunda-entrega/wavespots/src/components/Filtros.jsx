@@ -1,7 +1,7 @@
 import Button from "@components/Button.jsx";
 import Input from "@components/Input.jsx";
 
-const PAISES = [
+const PAISES_BASE = [
   "Brasil",
   "EE. UU.",
   "México",
@@ -43,7 +43,26 @@ const OCEANOS = [
 
 const OLAS = ["Reef Break", "Beach Break", "Point Break", "River Mouth"];
 
+/**
+ * Renderiza el buscador por nombre, los cuatro desplegables de filtrado y el botón para limpiar filtros.
+ * @method Filtros
+ * @param {Array} spots - Lista de spots cargados
+ * @param {string} busqueda - Texto actual del buscador
+ * @param {string} pais - País seleccionado
+ * @param {string} nivel - Nivel seleccionado
+ * @param {string} oceano - Océano seleccionado
+ * @param {string} ola - Tipo de ola seleccionado
+ * @param {string} errorBusqueda - Mensaje de error si la búsqueda es inválida
+ * @param {Function} onBuscar - Función que se ejecuta al escribir en el buscador
+ * @param {Function} onCambiarPais - Función que actualiza el país seleccionado
+ * @param {Function} onCambiarNivel - Función que actualiza el nivel seleccionado
+ * @param {Function} onCambiarOceano - Función que actualiza el océano seleccionado
+ * @param {Function} onCambiarOla - Función que actualiza el tipo de ola seleccionado
+ * @param {Function} onLimpiar - Función que resetea todos los filtros
+ * @return {JSX.Element} Sección de filtros
+ */
 const Filtros = ({
+  spots = [],
   busqueda,
   pais,
   nivel,
@@ -57,6 +76,11 @@ const Filtros = ({
   onCambiarOla,
   onLimpiar,
 }) => {
+  const paisesNuevos = spots
+    .map((s) => s.pais)
+    .filter((p) => p && !PAISES_BASE.includes(p));
+  const listaPaises = [...PAISES_BASE, ...new Set(paisesNuevos)];
+
   return (
     <div className="filtros-contenedor">
       <Input
@@ -83,7 +107,7 @@ const Filtros = ({
               onChange={(e) => onCambiarPais(e.target.value)}
             >
               <option value="">Todos</option>
-              {PAISES.map((p) => (
+              {listaPaises.map((p) => (
                 <option key={p} value={p}>
                   {p}
                 </option>
