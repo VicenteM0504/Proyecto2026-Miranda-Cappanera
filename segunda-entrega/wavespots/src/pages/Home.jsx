@@ -8,7 +8,7 @@ const Home = () => {
   const [spots, setSpots] = useState([]);
   const [spotsFiltrados, setSpotsFiltrados] = useState([]);
   const [busqueda, setBusqueda] = useState("");
-  const [pais, setPais] = useState(localStorage.getItem("paisFiltro") || "");
+  const [pais, setPais] = useState("");
   const [nivel, setNivel] = useState("");
   const [oceano, setOceano] = useState("");
   const [ola, setOla] = useState("");
@@ -23,12 +23,7 @@ const Home = () => {
     try {
       const data = await getSpots();
       setSpots(data);
-      const paisGuardado = localStorage.getItem("paisFiltro") || "";
-      if (paisGuardado) {
-        setSpotsFiltrados(data.filter((spo) => spo.pais === paisGuardado));
-      } else {
-        setSpotsFiltrados(data);
-      }
+      setSpotsFiltrados(data);
     } catch (error) {
       console.error(`Error al retornar spots: ${error}`);
     }
@@ -39,8 +34,24 @@ const Home = () => {
   }, []);
 
   /**
+   * Blanquea el buscador y los filtros desplegables, quita la selección del mapa y vuelve a mostrar la lista completa.
+   * @method resetearFiltros
+   */
+  const resetearFiltros = () => {
+    setSpotSeleccionado(null);
+    setBusqueda("");
+    setPais("");
+    setNivel("");
+    setOceano("");
+    setOla("");
+    setErrorBusqueda("");
+    localStorage.removeItem("ultimoSpot");
+    setSpotsFiltrados(spots);
+  };
+
+  /**
    * Filtra la lista de spots según el texto ingresado en el buscador y las opciones seleccionadas.
-   * Si no hay coincidencias, informa el error al usuario, blanquea la búsqueda y muestra todos los spots.
+   * Si no hay coincidencias, informa el error al usuario, resetea todos los filtros y muestra todos los spots.
    * @method aplicarFiltros
    * @param {string} textoBusqueda - Texto a buscar por nombre
    * @param {string} paisSel - País seleccionado
@@ -76,15 +87,8 @@ const Home = () => {
     }
 
     if (newLista.length === 0) {
-      setErrorBusqueda("No se encontraron spots con los criterios ingresados.");
       alert("No se encontraron spots con los criterios ingresados.");
-      setBusqueda("");
-      setPais("");
-      setNivel("");
-      setOceano("");
-      setOla("");
-      localStorage.removeItem("paisFiltro");
-      setSpotsFiltrados(spots);
+      resetearFiltros();
     } else {
       setErrorBusqueda("");
       setSpotsFiltrados(newLista);
@@ -99,7 +103,6 @@ const Home = () => {
 
   const handlePais = (valor) => {
     setPais(valor);
-    localStorage.setItem("paisFiltro", valor);
     aplicarFiltros(busqueda, valor, nivel, oceano, ola);
   };
 
@@ -119,22 +122,6 @@ const Home = () => {
   };
 
   /**
-   * Blanquea el buscador y los filtros desplegables, quita la selección del mapa y vuelve a mostrar la lista completa.
-   * @method resetearFiltros
-   */
-  const resetearFiltros = () => {
-    setSpotSeleccionado(null);
-    setBusqueda("");
-    setPais("");
-    setNivel("");
-    setOceano("");
-    setOla("");
-    setErrorBusqueda("");
-    localStorage.removeItem("paisFiltro");
-    setSpotsFiltrados(spots);
-  };
-
-  /**
    * Selecciona un spot desde un botón del mapa y filtra las tarjetas.
    * Si se presiona el mismo botón nuevamente, se quita el filtro.
    * @method mostrarSpot
@@ -147,6 +134,7 @@ const Home = () => {
     }
 
     setSpotSeleccionado(nombreSpot);
+    localStorage.setItem("ultimoSpot", nombreSpot);
     setBusqueda("");
     setPais("");
     setNivel("");

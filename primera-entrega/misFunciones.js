@@ -316,6 +316,8 @@ const spots = [
   },
 ];
 
+let spotSeleccionado = null;
+
 /**
  * Renderiza e inserta en el DOM las tarjetas de los spots de surf contenidos en la lista ingresada.
  * @method mostrarTarjetas
@@ -369,6 +371,21 @@ const mostrarTarjetas = (lista) => {
 };
 
 /**
+ * Blanquea el buscador y los filtros desplegables, quita la selección del mapa y vuelve a mostrar la lista completa de spots.
+ * @method resetearFiltros
+ */
+
+const resetearFiltros = () => {
+  spotSeleccionado = null;
+  document.getElementById("Busqueda").value = "";
+  document.getElementById("Pais").value = "";
+  document.getElementById("Nivel").value = "";
+  document.getElementById("Ola").value = "";
+  document.getElementById("Oceano").value = "";
+  mostrarTarjetas(spots);
+};
+
+/**
  * Filtra la lista de spots según el texto ingresado en el buscador y las opciones seleccionadas en los desplegables de país, nivel, ola y océano.
  * @method filtrarTarjeta
  */
@@ -413,23 +430,6 @@ const filtrarTarjeta = () => {
 };
 
 /**
- * Blanquea el buscador y los filtros desplegables, quita la selección del mapa y vuelve a mostrar la lista completa de spots.
- * @method resetearFiltros
- */
-
-const resetearFiltros = () => {
-  spotSeleccionado = null;
-  document.getElementById("Busqueda").value = "";
-  document.getElementById("Pais").value = "";
-  document.getElementById("Nivel").value = "";
-  document.getElementById("Ola").value = "";
-  document.getElementById("Oceano").value = "";
-  mostrarTarjetas(spots);
-};
-
-let spotSeleccionado = null;
-
-/**
  * Selecciona un spot desde la interaccion con un boton desde el mapa, y ejecuta el filtrado de tarjetas.
  * Cumple con la funcion de si se apreta el mismo boton, se elimina el filtro.
  * Y para los dispositivos de 900 de width o menos hace un scroll automatico hacia las tarjetas.
@@ -439,17 +439,17 @@ let spotSeleccionado = null;
 
 const mostrarSpot = (nombreSpot) => {
   if (spotSeleccionado === nombreSpot) {
-    spotSeleccionado = null;
-    document.getElementById("Busqueda").value = "";
-    document.getElementById("Pais").value = "";
-    document.getElementById("Nivel").value = "";
-    document.getElementById("Ola").value = "";
-    document.getElementById("Oceano").value = "";
-    mostrarTarjetas(spots);
+    resetearFiltros();
     return;
   }
 
   spotSeleccionado = nombreSpot;
+  document.getElementById("Busqueda").value = "";
+  document.getElementById("Pais").value = "";
+  document.getElementById("Nivel").value = "";
+  document.getElementById("Ola").value = "";
+  document.getElementById("Oceano").value = "";
+
   const newLista = spots.filter(
     (spo) => spo.nombre.toLowerCase() === nombreSpot.toLowerCase(),
   );
