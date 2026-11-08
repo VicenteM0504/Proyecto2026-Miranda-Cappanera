@@ -1,3 +1,9 @@
+/**
+ * Renderiza la tarjeta individual con toda la información de un spot de surf.
+ * @method TarjetaSpot
+ * @param {object} spot - Objeto con los datos del spot a mostrar
+ * @return {JSX.Element} Tarjeta del spot
+ */
 const TarjetaSpot = ({ spot }) => {
   return (
     <div className="tarjeta">
