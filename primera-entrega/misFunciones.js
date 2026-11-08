@@ -406,8 +406,7 @@ const filtrarTarjeta = () => {
 
   if (newLista.length === 0) {
     alert("No se encontraron spots con los criterios ingresados.");
-    document.getElementById("Busqueda").value = "";
-    mostrarTarjetas(spots);
+    resetearFiltros();
   } else {
     mostrarTarjetas(newLista);
   }
