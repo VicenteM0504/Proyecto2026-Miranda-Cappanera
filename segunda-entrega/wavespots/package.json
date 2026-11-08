@@ -7,8 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "mock": "npx json-server db.json --port 3001",
-    "service": "npx json-server db.json --port 3001"
+    "mock": "npx json-server src/data/db.json --port 3001",
+    "service": "npx json-server src/data/db.json --port 3001"
   },
   "dependencies": {
     "react": "^19.3.1",
